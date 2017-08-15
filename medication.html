@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" type="text/css" href="css/index.css">
+  <title>MEDIGO</title>
+</head>
+
+<body id="medication">
+
+  <div id="meds_title">
+    <h1>Medications</h1>
+  </div>
+  <div id="meds">
+    <p>Are you allergic to any medications?</p>
+    <button type="button">yes</button>
+    <button type="button">no</button>
+
+    <p>List any medications you take including oral contraceptives, over the counter medications, and home remedies</p>
+
+    <form method="POST">
+     <div id="dynamicInput">
+          Entry 1<br><input type="text" name="myInputs[]">
+     </div>
+     <input type="button" value="Add another" onClick="addInput('dynamicInput');">
+   </form>
+
+   <p>List any injuries, surgeries, or hospitalizations you have had.</p>
+
+   <form method="POST">
+    <div id="dynamic">
+         Entry 1<br><input type="text" name="myInputs[]">
+    </div>
+    <input type="button" value="Add another" onClick="addInput('dynamic');">
+  </form>
+
+  </div>
+
+<!-- JAVASCRIPT-->
+  <script type="text/javascript">
+  var counter = 1;
+  function addInput(divName){
+          var newdiv = document.createElement('div');
+          newdiv.innerHTML = "Entry " + (counter + 1) + " <br><input type='text' name='myInputs[]'>";
+          document.getElementById(divName).appendChild(newdiv);
+          counter++;
+  }
+  </script>
+
+</body>
+
+</html>
