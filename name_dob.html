@@ -1,14 +1,205 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <style>
+  button {font-size: 20px;
+  }
+  input {
+    font-size: 20px;
+  }
+  h2 {
+    font-size: 20px;
+  }
+  </style>
+
   <meta charset="utf-8">
   <link rel="stylesheet" type="text/css" href="css/index.css">
   <title>MEDIGO</title>
+
 </head>
 
 <body>
   <div>
-    <h1> name</h1> 
+    <h1>My Medical Information</h1>
+    <h4>Last Name</h4>
+    <input type="string" id = "name">
+    <button>ENTER</button>
+    <h4>MI</h4>
+    <input type="string" id = "name">
+    <button>ENTER</button>
+    <h4>FIRST NAME</h4>
+    <input type="string" id = "name">
+    <button>ENTER</button>
+
   </div>
+
+  <div>
+    <p>Month</p>
+      <select>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+        <option value="9">9</option>
+        <option value="10">10</option>
+        <option value="11">11</option>
+        <option value="12">12</option>
+      </select>
+  </div>
+  <div>
+    <p>Day</p>
+      <select>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+        <option value="9">9</option>
+        <option value="10">10</option>
+        <option value="11">11</option>
+        <option value="12">12</option>
+        <option value="13">13</option>
+        <option value="14">14</option>
+        <option value="15">15</option>
+        <option value="16">16</option>
+        <option value="17">17</option>
+        <option value="18">18</option>
+        <option value="19">19</option>
+        <option value="20">20</option>
+        <option value="21">21</option>
+        <option value="22">22</option>
+        <option value="23">23</option>
+        <option value="24">24</option>
+        <option value="25">25</option>
+        <option value="26">26</option>
+        <option value="27">27</option>
+        <option value="28">28</option>
+        <option value="29">29</option>
+        <option value="30">30</option>
+        <option value="31">31</option>
+      </select>
+  </div>
+  <div>
+    <p3>year</p3>
+      <input type="number" id="year">
+  </div>
+</body>
+<head>
+<title>Ethnicity</title>
+  <style>
+
+  h1 {
+    text-align: center;
+  }
+
+  /* Dropdown Button */
+
+  .dropbtn {
+      background-color: #4CAF50;
+      color: white;
+      padding: 10px;
+      font-size: 10px;
+      border: none;
+      cursor: pointer;
+      position: absolute;
+  }
+
+  /* Dropdown button on hover & focus */
+  .dropbtn:hover, .dropbtn:focus {
+      background-color: #3e8e41;
+  }
+
+  /* The container <div> - needed to position the dropdown content */
+  .dropdown {
+      position: absolute;
+      display: inline;
+      top: 63%;}
+
+  /* Dropdown Content (Hidden by Default) */
+  .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #f9f9f9;
+      min-width: 160px;
+      box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+      z-index: 1;
+  }
+
+  /* Links inside the dropdown */
+  .dropdown-content a {
+      color: black;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+  }
+
+  /* Change color of dropdown links on hover */
+  .dropdown-content a:hover {background-color: #f1f1f1}
+
+  /* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
+  .show {display:block;}
+</style>
+
+
+<meta charset = "utf-8">
+  <link rel= "stylesheet" type ="text/css" href= "ethnicity.css">
+</head>
+
+
+
+<body>
+  <h1>Ethnicity</h1>
+  <p>Please Choose Your Ethnicity</p>
+
+  <div class="dropdown">
+  <button onclick="myFunction()" class="dropbtn">Dropdown</button>
+  <div id="myDropdown" class="dropdown-content">
+    <a href="#"> Asain / Pacific Islander</a>
+    <a href="#">White </a>
+    <a href="#">Hispanic or Latino </a>
+    <a href = "#"> Black or African American</a>
+    <a href ="#"> Native American or American Indian</a>
+    <a href ="#"> Other</a>
+  </div>
+</div>
+
+<script>
+/* When the user clicks on the button,
+toggle between hiding and showing the dropdown content */
+function myFunction() {
+    document.getElementById("myDropdown").classList.toggle("show");
+}
+
+// Close the dropdown menu if the user clicks outside of it
+window.onclick = function(event) {
+  if (!event.target.matches('.dropbtn')) {
+
+    var dropdowns = document.getElementsByClassName("dropdown-content");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+      }
+    }
+  }
+}
+</script>
+
+
+</body>
+<body>
+  <h1>Blood Type</h1>
+  <input type="string" id ="blood type">
+  <button> ENTER </button>
+  <button> + </button>
+  <button> - </button>
 </body>
 </html>
