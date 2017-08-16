@@ -22,16 +22,16 @@
   <div>
     <h1>My Medical Information</h1>
     <h4>Last Name</h4>
-    <input type="string" id = "name">
-    <button>ENTER</button>
+    <input type="text" id = "last-name">
+    <button type="submit" onclick="lastName()">ENTER</button>
     <h4>middle inital</h4>
-    <input type="string" id = "name">
-    <button>ENTER</button>
+    <input type="string" id = "middle-name">
+    <button onclick="middleName()">ENTER</button>
     <h4>FIRST NAME</h4>
-    <input type="string" id = "name">
-    <button>ENTER</button>
-
+    <input type="string" id = "first-name">
+    <button onclick="firstName()">ENTER</button>
   </div>
+
 
   <div>
     <p>Month</p>
@@ -161,7 +161,7 @@
   </div>
 </div>
 
-<script>
+<script type="text/javascript">
 /* When the user clicks on the button,
 toggle between hiding and showing the dropdown content */
 function myFunction() {
@@ -180,16 +180,21 @@ window.onclick = function(event) {
     }
   }
 }
+
+function lastName() {
+  var ln = document.getElementById("last-name");
+  alert(ln);
+}
 </script>
-  
+
   <h1>Blood Type</h1>
   <input type="string" id ="blood type">
   <button> ENTER </button>
   <button> + </button>
   <button> - </button>
-  
-<a href="medical_history.html"><img src="img/backbutton.jpg" height="42" width="42"></a>
-<a href="index.html"><img src="img/nextbutton.jpg" height="42" width="42"></a>
+
+<a href="medical_history.html"><img src="img/nextbutton.jpg" height="42" width="42"></a>
+<a href="index.html"><img src="img/backbutton.jpg" height="42" width="42"></a>
 
 </body>
 </html>
