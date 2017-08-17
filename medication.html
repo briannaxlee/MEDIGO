@@ -5,13 +5,6 @@
   <meta charset="utf-8">
   <link rel="stylesheet" type="text/css" href="css/index.css">
   <title>MEDIGO</title>
-
-  <style>
-  body {
-    align-items: center;
-    text-align: center;
-  }
-  </style>
 </head>
 
 <body id="medication">
@@ -27,54 +20,35 @@
     <p>List any medications you take including oral contraceptives, over the counter medications, and home remedies</p>
 
     <form method="POST">
-
-      <!-- <input type="text" name="myInputs[]" placeholder="Username"> -->
-
      <div id="dynamicInput">
-       <label>
-        Entry 1 </label><input type="text" name="myInputs[]">
+          Entry 1<br><input type="text" name="myInputs[]">
      </div>
      <input type="button" value="Add another" onClick="addInput('dynamicInput');">
-    </form>
+   </form>
 
-    <input type="button" value="finished" onClick="submitMed();">
+   <p>List any injuries, surgeries, or hospitalizations you have had.</p>
+
+   <form method="POST">
+    <div id="dynamic">
+         Entry 1<br><input type="text" name="myInputs[]">
+    </div>
+    <input type="button" value="Add another" onClick="addInput('dynamic');">
+  </form>
 
   </div>
 
 <!-- JAVASCRIPT-->
   <script type="text/javascript">
   var counter = 1;
-  function addInput(divName) {
+  function addInput(divName){
           var newdiv = document.createElement('div');
-          newdiv.innerHTML = "<lable>Entry " + (counter + 1) + " </lable>" + "<input type='text' name='myInputs[]'>";
+          newdiv.innerHTML = "Entry " + (counter + 1) + " <br><input type='text' name='myInputs[]'>";
           document.getElementById(divName).appendChild(newdiv);
           counter++;
   }
-
-
-  // function submitMed() {
-  //   var userMedInput = document.getElementsByName("myInputs[]");
-  //   console.log(userMedInput)
-  //   // key is "medicationInput"
-  //   localStorage.setItem("medicationInput", userMedInput[0].value);
-  //   var getMedInput = localStorage.getItem("medicationInput");
-  // }
-
-  function submitMed() {
-    var userMedInput = document.getElementsByName("myInputs[]");
-    console.log(userMedInput)
-
-    for (i=0; i<userMedInput.length; i++) {
-    // key is "medicationInput"
-      localStorage.setItem("medicationInput", userMedInput[i].value);
-    }
-
-    var getMedInput = localStorage.getItem("medicationInput");
-  }
-
-
-
   </script>
+<a href="medicalhistory.html"><img src="img/backbutton.jpg" height="42" width="42"></a>
+<a href="blank.html"><img src="img/nextbutton.jpg" height="42" width="42"></a>
 
 </body>
 
