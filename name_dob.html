@@ -10,6 +10,7 @@
   h2 {
     font-size: 20px;
   }
+
   </style>
 
   <meta charset="utf-8">
@@ -21,33 +22,115 @@
 <body>
   <div>
     <h1>My Medical Information</h1>
-    <h4>Last Name</h4>
-    <input type="text" id = "last-name">
+    <!--<h4>Last Name</h4>
+    <input type="text" name = "last" id = "last-name">
+    <script>
+    var input = document.getElementById("last-name");
+    localStorage.setItem("last", input.value);
+    var storedValue = localStorage.getItem("last");
+    </script>
     <button type="submit" onclick="lastName()">ENTER</button>
-    <h4>middle inital</h4>
-    <input type="string" id = "middle-name">
+    <h4>middle initial</h4>
+    <input type="string" name = "middle" id = "middle-name">
+    <script>
+    var input = document.getElementById("middle-name");
+    localStorage.setItem("middle", input.value);
+    var storedValue = localStorage.getItem("middle");
+    </script>
     <button onclick="middleName()">ENTER</button>
     <h4>FIRST NAME</h4>
-    <input type="string" id = "first-name">
-    <button onclick="firstName()">ENTER</button>
+    <input type="string" name = "first" id = "first-name">
+    <script>
+    var input = document.getElementById("last-name");
+    localStorage.setItem("first", input.value);
+    var storedValue = localStorage.getItem("first");
+  </script>
+    <button onclick="firstName()">ENTER</button>-->
+    <form action="PayslipServlet" method="get">
+     Last name:    <input type="text" name="lname" id="lname"><br/>
+     First name:   <input type="text" name="fname" id="fname"><br/>
+     Middle name:  <input type="text" name="mname" id ="mname"><br/>
+     Name: <span id="result"></span>
+     <br>
+     <input type="button" value="Submit" onClick="pr()">
+   </form>
+
+   <script>
+     function pr(){
+       document.getElementById("result").innerHTML = document.getElementById('fname').value + " " + document.getElementById('mname').value + " " + document.getElementById('lname').value;
+       var linput = document.getElementById("lname");
+       localStorage.setItem("lname", linput.value);
+       var finput = document.getElementById("fname");
+       localStorage.setItem("fname", finput.value);
+       var minput = document.getElementById("mname");
+       localStorage.setItem("mname", minput.value);
+       var getfname = localStorage.getItem("fname");
+       console.log(getfname);
+       var getlname = localStorage.getItem("lname");
+       console.log(getlname);
+       var getmname = localStorage.getItem("mname");
+       console.log(getmname);
+     }
+     var i;
+
+     console.log("local storage");
+     for (i = 0; i < localStorage.length; i++)   {
+       console.log(localStorage.key(i) + "=[" + localStorage.getItem(localStorage.key(i)) + "]");
+     }
+     /*var a = [];
+     a.push(JSON.parse(localStorage.getItem('fname')));
+     localStorage.setItem('fname', JSON.stringify(a));
+     a.push(JSON.parse(localStorage.getItem('lname')));
+     localStorage.setItem('lname', JSON.stringify(a));
+     a.push(JSON.parse(localStorage.getItem('mname')));
+     localStorage.setItem('mname', JSON.stringify(a));
+
+     function SaveDataToLocalStorage(finput)
+     {
+       var a=[];
+       a=JSON.parse(localStorage.getItem('fname'));
+
+       a.push(finput);
+       alert(a);
+       localStorage.setItem('fname', JSON.stringify(a));
+     }
+     function SaveDataToLocalStorage(linput)
+     {
+       var a=[];
+       a=JSON.parse(localStorage.getItem('lname'));
+       a.push(linput);
+       alert(a);
+       localStorage.setItem('lname', JSON.stringify(a));
+     }
+     function SaveDataToLocalStorage(minput)
+     {
+       var a=[];
+       a=JSON.parse(localStorage.getItem('mname'));
+       a.push(minput);
+       alert(a);
+       localStorage.setItem('mname', JSON.stringify(a));
+     }*/
+
+   </script>
+
   </div>
 
 
   <div>
     <p>Month</p>
       <select>
-        <option value="1">January</option>
-        <option value="2">Febuary</option>
-        <option value="3">March</option>
-        <option value="4">April</option>
-        <option value="5">May</option>
-        <option value="6">June</option>
-        <option value="7">July</option>
-        <option value="8">August</option>
-        <option value="9">September</option>
-        <option value="10">October</option>
-        <option value="11">November</option>
-        <option value="12">December</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+        <option value="9">9</option>
+        <option value="10">10</option>
+        <option value="11">11</option>
+        <option value="12">12</option>
       </select>
   </div>
   <div>
@@ -97,7 +180,47 @@
   h1 {
     text-align: center;
   }
-  </style>
+  /* Dropdown Button */
+  .dropbtn {
+      background-color: #4CAF50;
+      color: white;
+      padding: 10px;
+      font-size: 10px;
+      border: none;
+      cursor: pointer;
+      position: absolute;
+  }
+  /* Dropdown button on hover & focus */
+  .dropbtn:hover, .dropbtn:focus {
+      background-color: #3e8e41;
+  }
+  /* The container <div> - needed to position the dropdown content */
+  /*.dropdown {
+      position: absolute;
+      display: inline;
+      top: 63%;}*/
+  /* Dropdown Content (Hidden by Default) */
+  .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #f9f9f9;
+      min-width: 160px;
+      box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+      z-index: 1;
+  }
+  /* Links inside the dropdown */
+  .dropdown-content a {
+      color: black;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+  }
+  /* Change color of dropdown links on hover */
+  .dropdown-content a:hover {background-color: #f1f1f1}
+  /* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
+  .show {display:block;}
+</style>
+
 
 <meta charset = "utf-8">
   <link rel= "stylesheet" type ="text/css" href= "ethnicity.css">
@@ -108,12 +231,121 @@
 <body>
   <h1>Ethnicity</h1>
   <p>Please Choose Your Ethnicity</p>
-<input type = "checkbox" name="Asian / Pacific Islander" value = "Asian / Pacific Islander" > Asian / Pacific Islander
-<input type= "checkbox" name =" White " value = "White " value = "White"> White
-<input type = "checkbox" name = "Latino or Hispanic" value = "Latino or Hispanic" > Latino or Hispanic
-<input type = "checkbox" name = "Black or African American" value ="Black or African American" > Black or African American
-<input type = "checkbox" name = "Other" value= "Other">other, please specify: <input type="text" name = "Other"
+  <form action="PayslipServlet" method="get">
+  <input type = "checkbox" name="Asian / Pacific Islander" id="A" value = "Asian / Pacific Islander" onClick="A" > Asian / Pacific Islander
+  <input type= "checkbox" name =" White " id= "W" value = "White " > White
+  <input type = "checkbox" name = "Latino or Hispanic" id = "L" value = "Latino or Hispanic" > Latino or Hispanic
+  <input type = "checkbox" name = "Black or African American" id = "B"value ="Black or African American" > Black or African American
+  <input type = "checkbox" name = "Other" id = "O" value= "Other">other, please specify: <input type="text" id = "S" name = "Other">
+  Ethnicity: <span id="result2"></span>
+  <input type = "button" value= "submit" onClick="e()">
 
+  </form>
+  <script>
+  function e(){
+      /*if (onClick="A") {
+      document.getElementById('A').value;
+      var ainput = document.getElementById("A");
+      localStorage.setItem("A", ainput.value);
+      var getaname = localStorage.getItem("A");
+      console.log(getaname);
+    }
+    else if (onClick="W") {
+      document.getElementById('W').value;
+      var winput = document.getElementById("W");
+      localStorage.setItem("W", winput.value);
+      var getwname = localStorage.getItem("W");
+      console.log(getwname);
+    }
+    else if (onClick="B") {
+      document.getElementById('B').value;
+      var binput = document.getElementById("B");
+      localStorage.setItem("B", binput.value);
+      var getbname = localStorage.getItem("B");
+      console.log(getbname);
+    }
+    else if (onClick="L") {
+      document.getElementById('L').value;
+      var linput = document.getElementById("L");
+      localStorage.setItem("L", linput.value);
+      var getlname = localStorage.getItem("L");
+      console.log(getlname);
+
+    }
+    else if (onClick="O") {
+      document.getElementById('O').value;
+      var oinput = document.getElementById("O");
+      localStorage.setItem("O", oinput.value);
+      var getoname = localStorage.getItem("O");
+      console.log(getoname);
+    }
+    else if (onClick="S") {
+      document.getElementById('S').value;
+      var sinput = document.getElementById("S");
+      localStorage.setItem("S", sinput.value);
+      var getsname = localStorage.getItem("S");
+      console.log(getsname);
+    }
+    else {
+    fix this tomorrow and store dob too*/
+
+
+    document.getElementById("result2").innerHTML = document.getElementById('A').value + " " + document.getElementById('W').value + " " + document.getElementById('B').value+ " " + document.getElementById('L').value + " " + document.getElementById('O').value + " " + document.getElementById('S').value ;
+    var ainput = document.getElementById("A");
+    localStorage.setItem("A", ainput.value);
+    var winput = document.getElementById("W");
+    localStorage.setItem("W", winput.value);
+    var binput = document.getElementById("B");
+    localStorage.setItem("B", binput.value);
+    var linput = document.getElementById("L");
+    localStorage.setItem("L", linput.value);
+    var oinput = document.getElementById("O");
+    localStorage.setItem("O", oinput.value);
+    var sinput = document.getElementById("S");
+    localStorage.setItem("S", sinput.value)
+    var getaname = localStorage.getItem("A");
+    console.log(getaname);
+    var getwname = localStorage.getItem("W");
+    console.log(getwname);
+    var getbname = localStorage.getItem("B");
+    console.log(getbname);
+    var getlname = localStorage.getItem("L");
+    console.log(getlname);
+    var getoname = localStorage.getItem("O");
+    console.log(getoname);
+    var getsname = localStorage.getItem("S");
+    console.log(getsname);
+
+
+  }
+  var i;
+
+  console.log("local storage");
+  for (i = 0; i < localStorage.length; i++)   {
+    console.log(localStorage.key(i) + "=[" + localStorage.getItem(localStorage.key(i)) + "]");
+  }
+  </script>
+<script type="text/javascript">
+// <!--When the user clicks on the button,
+// toggle between hiding and showing the dropdown content
+// function myFunction() {
+//     document.getElementById("myDropdown").classList.toggle("show");
+// }
+// // Close the dropdown menu if the user clicks outside of it
+// window.onclick = function(event) {
+//   if (!event.target.matches('.dropbtn')) {
+//     var dropdowns = document.getElementsByClassName("dropdown-content");
+//     var i;
+//     for (i = 0; i < dropdowns.length; i++) {
+//       var openDropdown = dropdowns[i];
+//       if (openDropdown.classList.contains('show')) {
+//         openDropdown.classList.remove('show');
+//       }
+//     }
+//   }
+// }-->
+
+</script>
 
   <h1>Blood Type</h1>
   <input type="string" id ="blood type">
@@ -121,12 +353,8 @@
   <button> + </button>
   <button> - </button>
 
-<a href="medical_history.html"><img src="img/okbutton.png" height="42" width="42"></a>
-
-<a href="index.html"><img src="img/backbutton.jpg" height="42" width="42"></a>
 <a href="medical_history.html"><img src="img/nextbutton.jpg" height="42" width="42"></a>
+<a href="index.html"><img src="img/backbutton.jpg" height="42" width="42"></a>
 
 </body>
 </html>
-
-
