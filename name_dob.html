@@ -236,35 +236,35 @@
   <input type= "checkbox" name =" White " id= "W" value = "White " > White
   <input type = "checkbox" name = "Latino or Hispanic" id = "L" value = "Latino or Hispanic" > Latino or Hispanic
   <input type = "checkbox" name = "Black or African American" id = "B"value ="Black or African American" > Black or African American
-  <input type = "checkbox" name = "Other" id = "O" value= "Other">other, please specify: <input type="text" id = "S" name = "Other">
-  Ethnicity: <span id="result2"></span>
+  <input type = "checkbox" name = "Other" id = "O" value= "Other">other
+  <!--Ethnicity: <span id="result2"></span>-->
   <input type = "button" value= "submit" onClick="e()">
 
   </form>
   <script>
   function e(){
-      /*if (onClick="A") {
+    if (document.getElementById("A").checked == true) {
       document.getElementById('A').value;
       var ainput = document.getElementById("A");
       localStorage.setItem("A", ainput.value);
       var getaname = localStorage.getItem("A");
       console.log(getaname);
     }
-    else if (onClick="W") {
+    else if (document.getElementById("W").checked == true) {
       document.getElementById('W').value;
       var winput = document.getElementById("W");
       localStorage.setItem("W", winput.value);
       var getwname = localStorage.getItem("W");
       console.log(getwname);
     }
-    else if (onClick="B") {
+    else if (document.getElementById("B").checked == true) {
       document.getElementById('B').value;
       var binput = document.getElementById("B");
       localStorage.setItem("B", binput.value);
       var getbname = localStorage.getItem("B");
       console.log(getbname);
     }
-    else if (onClick="L") {
+    else if (document.getElementById("L").checked == true) {
       document.getElementById('L').value;
       var linput = document.getElementById("L");
       localStorage.setItem("L", linput.value);
@@ -272,25 +272,19 @@
       console.log(getlname);
 
     }
-    else if (onClick="O") {
+    else if (document.getElementById("O").checked == true) {
       document.getElementById('O').value;
       var oinput = document.getElementById("O");
       localStorage.setItem("O", oinput.value);
       var getoname = localStorage.getItem("O");
       console.log(getoname);
     }
-    else if (onClick="S") {
-      document.getElementById('S').value;
-      var sinput = document.getElementById("S");
-      localStorage.setItem("S", sinput.value);
-      var getsname = localStorage.getItem("S");
-      console.log(getsname);
-    }
     else {
-    fix this tomorrow and store dob too*/
+    alert ("An ethnicity was not chosen");
+    }
 
 
-    document.getElementById("result2").innerHTML = document.getElementById('A').value + " " + document.getElementById('W').value + " " + document.getElementById('B').value+ " " + document.getElementById('L').value + " " + document.getElementById('O').value + " " + document.getElementById('S').value ;
+    /*document.getElementById("result2").innerHTML = document.getElementById('A').value + " " + document.getElementById('W').value + " " + document.getElementById('B').value+ " " + document.getElementById('L').value + " " + document.getElementById('O').value + " " + document.getElementById('S').value ;
     var ainput = document.getElementById("A");
     localStorage.setItem("A", ainput.value);
     var winput = document.getElementById("W");
@@ -314,7 +308,7 @@
     var getoname = localStorage.getItem("O");
     console.log(getoname);
     var getsname = localStorage.getItem("S");
-    console.log(getsname);
+    console.log(getsname);*/
 
 
   }
@@ -358,3 +352,6 @@
 
 </body>
 </html>
+
+
+
