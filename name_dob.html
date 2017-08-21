@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <style>
   button {font-size: 20px;
   }
@@ -10,11 +11,13 @@
   h2 {
     font-size: 20px;
   }
-
+  #birthday_results {
+    visibility: hidden;
+  }
   </style>
 
   <meta charset="utf-8">
-  <link rel="stylesheet" type="text/css" href="css/index.css">
+  <link rel="stylesheet" type="text/css" href="css/index2.css">
   <title>MEDIGO</title>
 
 </head>
@@ -47,11 +50,13 @@
   </script>
     <button onclick="firstName()">ENTER</button>-->
     <form action="PayslipServlet" method="get">
-     Last name:    <input type="text" name="lname" id="lname"><br/>
-     First name:   <input type="text" name="fname" id="fname"><br/>
-     Middle name:  <input type="text" name="mname" id ="mname"><br/>
-     Name: <span id="result"></span>
-     <br>
+      First name:   <input type="text" name="fname" id="fname" value="">
+      <!-- <span id="fname_checkbox">√</span> -->
+      <br/>
+      Middle name:  <input type="text" name="mname" id ="mname"><br/>
+      Last name:    <input type="text" name="lname" id="lname"><br/>
+      Name: <span id="result"></span>
+      <br>
      <input type="button" value="Submit" onClick="pr()">
    </form>
 
@@ -71,9 +76,14 @@
        var getmname = localStorage.getItem("mname");
        console.log(getmname);
 
+      //  if (getfname !== undefined && getfname !== null && getfname !== [] && getfname !== "") {
+      //    document.getElementById('fname_checkbox').style.visibility="visible";
+      //  }
+      //  else {
+      //    document.getElementById('fname_checkbox').style.visibility="hidden";
+      //  }
      }
      var i;
-
      console.log("local storage");
      for (i = 0; i < localStorage.length; i++)   {
        console.log(localStorage.key(i) + "=[" + localStorage.getItem(localStorage.key(i)) + "]");
@@ -85,12 +95,10 @@
      localStorage.setItem('lname', JSON.stringify(a));
      a.push(JSON.parse(localStorage.getItem('mname')));
      localStorage.setItem('mname', JSON.stringify(a));
-
      function SaveDataToLocalStorage(finput)
      {
        var a=[];
        a=JSON.parse(localStorage.getItem('fname'));
-
        a.push(finput);
        alert(a);
        localStorage.setItem('fname', JSON.stringify(a));
@@ -111,15 +119,14 @@
        alert(a);
        localStorage.setItem('mname', JSON.stringify(a));
      }*/
-
    </script>
 
   </div>
 
 
-  <div>
+  <div id="birthday">
     <p>Month</p>
-      <select id="months" name="months">
+      <select id="months" name="months" selected="">
         <option id = "Jan" value="Jan">January</option>
         <option id = "Feb" value="Feb">February</option>
         <option id = "Mar" value="Mar">March</option>
@@ -173,311 +180,247 @@
       <input type="number" id="year">
       <input type="button" value="Submit" onClick="dob()">
       <script>
-
       function dob(){
         var month = document.getElementById("months");
         var day = document.getElementById("days");
         if (month.value == "Jan") {
           document.getElementById("Jan").value;
           var janinput = document.getElementById("Jan");
-          localStorage.setItem("Jan", janinput.value);
-          var getjanname = localStorage.getItem("Jan");
+          localStorage.setItem("birthMonth", janinput.value);
+          var getjanname = localStorage.getItem("birthMonth");
           console.log(getjanname);
         }
         else if (month.value == "Feb") {
           document.getElementById("Feb").value;
           var febinput = document.getElementById("Feb");
-          localStorage.setItem("Feb", febinput.value);
-          var getfebname = localStorage.getItem("Feb");
+          localStorage.setItem("birthMonth", febinput.value);
+          var getfebname = localStorage.getItem("birthMonth");
           console.log(getfebname);
         }
         else if (month.value == "Mar") {
           document.getElementById("Mar").value;
           var marinput = document.getElementById("Mar");
-          localStorage.setItem("Mar", marinput.value);
-          var getmarname = localStorage.getItem("Mar");
+          localStorage.setItem("birthMonth", marinput.value);
+          var getmarname = localStorage.getItem("birthMonth");
           console.log(getmarname);
         }
         else if (month.value == "Apr") {
           document.getElementById("Apr").value;
           var aprinput = document.getElementById("Apr");
-          localStorage.setItem("Apr", aprinput.value);
-          var getaprname = localStorage.getItem("Apr");
+          localStorage.setItem("birthMonth", aprinput.value);
+          var getaprname = localStorage.getItem("birthMonth");
           console.log(getaprname);
-
         }
         else if (month.value == "May") {
           document.getElementById("May").value;
           var mayinput = document.getElementById("May");
-          localStorage.setItem("May", mayinput.value);
-          var getmayname = localStorage.getItem("May");
+          localStorage.setItem("birthMonth", mayinput.value);
+          var getmayname = localStorage.getItem("birthMonth");
           console.log(getmayname);
         }
         else if (month.value == "Jun") {
           document.getElementById("Jun").value;
           var juninput = document.getElementById("Jun");
-          localStorage.setItem("Jun", juninput.value);
-          var getjunname = localStorage.getItem("Jun");
+          localStorage.setItem("birthMonth", juninput.value);
+          var getjunname = localStorage.getItem("birthMonth");
           console.log(getjunname);
         }
         else if (month.value == "Jul") {
           document.getElementById("Jul").value;
           var julinput = document.getElementById("Jul")
-          localStorage.setItem("Jul", julinput.value);
-          var getjulname = localStorage.getItem("Jul");
+          localStorage.setItem("birthMonth", julinput.value);
+          var getjulname = localStorage.getItem("birthMonth");
           console.log(getjulname);
         }
         else if (month.value == "Aug") {
           document.getElementById("Aug").value;
           var auginput = document.getElementById("Aug");
-          localStorage.setItem("Aug", auginput.value);
-          var getaugname = localStorage.getItem("Aug");
+          localStorage.setItem("birthMonth", auginput.value);
+          var getaugname = localStorage.getItem("birthMonth");
           console.log(getaugname);
         }
         else if (month.value == "Sept") {
           document.getElementById("Sept").value;
           var septinput = document.getElementById("Sept");
-          localStorage.setItem("Sept", septinput.value);
-          var getseptname = localStorage.getItem("Sept");
+          localStorage.setItem("birthMonth", septinput.value);
+          var getseptname = localStorage.getItem("birthMonth");
           console.log(getseptname);
         }
         else if (month.value == "Oct") {
           document.getElementById("Oct").value;
           var octinput = document.getElementById("Oct");
-          localStorage.setItem("Oct", octinput.value);
-          var getoctname = localStorage.getItem("Oct");
+          localStorage.setItem("birthMonth", octinput.value);
+          var getoctname = localStorage.getItem("birthMonth");
           console.log(getoctname);
         }
         else if (month.value == "Nov") {
           document.getElementById("Nov").value;
           var novinput = document.getElementById("Nov");
-          localStorage.setItem("Nov", novinput.value);
-          var getnovname = localStorage.getItem("Nov");
+          localStorage.setItem("birthMonth", novinput.value);
+          var getnovname = localStorage.getItem("birthMonth");
           console.log(getnovname);
         }
         else if (month.value == "Dec") {
           document.getElementById("Dec").value;
           var decinput = document.getElementById("Dec");
-          localStorage.setItem("Dec", decinput.value);
-          var getdecname = localStorage.getItem("Dec");
+          localStorage.setItem("birthMonth", decinput.value);
+          var getdecname = localStorage.getItem("birthMonth");
           console.log(getdecname);
         }
         if (day.value == "1") {
           document.getElementById("1").value;
           var oneinput = document.getElementById("1");
-          localStorage.setItem("1", oneinput.value);
-          var getonename = localStorage.getItem("1");
-          console.log(getonename);
+          localStorage.setItem("birthDay", oneinput.value)
         }
         else if (day.value == "2") {
           document.getElementById("2").value;
           var twoinput = document.getElementById("2");
-          localStorage.setItem("2", twoinput.value);
-          var gettwoname = localStorage.getItem("2");
-          console.log(gettwoname);
+          localStorage.setItem("birthDay", twoinput.value);
         }
         else if (day.value == "3") {
           document.getElementById("3").value;
           var threeinput = document.getElementById("3");
-          localStorage.setItem("3", threeinput.value);
-          var getthreename = localStorage.getItem("3");
-          console.log(getthreename);
+          localStorage.setItem("birthDay", threeinput.value);
         }
         else if (day.value == "4") {
           document.getElementById("4").value;
           var fourinput = document.getElementById("4");
-          localStorage.setItem("4", fourinput.value);
-          var getfourname = localStorage.getItem("4");
-          console.log(getfourname);
+          localStorage.setItem("birthDay", fourinput.value);
         }
         else if (day.value == "5") {
           document.getElementById("5").value;
           var fiveinput = document.getElementById("5");
-          localStorage.setItem("5", fiveinput.value);
-          var getfivename = localStorage.getItem("5");
-          console.log(getfivename);
+          localStorage.setItem("birthDay", fiveinput.value);
         }
         else if (day.value == "6") {
           document.getElementById("6").value;
           var sixinput = document.getElementById("6");
-          localStorage.setItem("6", sixinput.value);
-          var getsixname = localStorage.getItem("6");
-          console.log(getsixname);
+          localStorage.setItem("birthDay", sixinput.value);
         }
         else if (day.value == "7") {
           document.getElementById("7").value;
           var seveninput = document.getElementById("7");
-          localStorage.setItem("7", seveninput.value);
-          var getsevenname = localStorage.getItem("7");
-          console.log(getsevenname);
+          localStorage.setItem("birthDay", seveninput.value);
         }
         else if (day.value == "8") {
           document.getElementById("8").value;
           var eightinput = document.getElementById("8");
-          localStorage.setItem("8", eightinput.value);
-          var geteightname = localStorage.getItem("8");
-          console.log(geteightname);
+          localStorage.setItem("birthDay", eightinput.value);
         }
         else if (day.value == "9") {
           document.getElementById("9").value;
           var nineinput = document.getElementById("9");
-          localStorage.setItem("9", nineinput.value);
-          var getninename = localStorage.getItem("9");
-          console.log(getninename);
+          localStorage.setItem("birthDay", nineinput.value);
         }
         else if (day.value == "10") {4
           document.getElementById("10").value;
           var teninput = document.getElementById("10");
-          localStorage.setItem("10", teninput.value);
-          var gettenname = localStorage.getItem("10");
-          console.log(getttenname);
+          localStorage.setItem("birthDay", teninput.value);
         }
         else if (day.value == "11") {
           document.getElementById("11").value;
           var eleveninput = document.getElementById("11");
-          localStorage.setItem("11", eleveninput.value);
-          var getelevenname = localStorage.getItem("11");
-          console.log(getelevenname);
+          localStorage.setItem("birthDay", eleveninput.value);
         }
         else if (day.value == "12") {
           document.getElementById("12").value;
           var twelveinput = document.getElementById("12");
-          localStorage.setItem("12", twelveinput.value);
-          var gettwelvename = localStorage.getItem("12");
-          console.log(gettwelvename);
+          localStorage.setItem("birthDay", twelveinput.value);
         }
         else if (day.value == "13") {
           document.getElementById("13").value;
           var thirteeninput = document.getElementById("13");
-          localStorage.setItem("13", thirteeninput.value);
-          var getthirteenname = localStorage.getItem("13");
-          console.log(getthirteenname);
+          localStorage.setItem("birthDay", thirteeninput.value);
         }
         else if (day.value == "14") {
           document.getElementById("14").value;
           var fourteeninput = document.getElementById("14");
-          localStorage.setItem("14", fourteeninput.value);
-          var getfourteenname = localStorage.getItem("14");
-          console.log(getfourteenname);
+          localStorage.setItem("birthDay", fourteeninput.value);
         }
         else if (day.value == "15") {
           document.getElementById("15").value;
           var fifteeninput = document.getElementById("15");
-          localStorage.setItem("15", fifteeninput.value);
-          var getfifteenname = localStorage.getItem("15");
-          console.log(getfifteenname);
+          localStorage.setItem("birthDay", fifteeninput.value);
         }
         else if (day.value == "16") {
           document.getElementById("16").value;
           var sixteeninput = document.getElementById("16");
-          localStorage.setItem("16", sixteeninput.value);
-          var getsixteenname = localStorage.getItem("16");
-          console.log(getsixteenname);
+          localStorage.setItem("birthDay", sixteeninput.value);
         }
         else if (day.value == "17") {
           document.getElementById("17").value;
           var seventeeninput = document.getElementById("17");
-          localStorage.setItem("17", seventeeninput.value);
-          var getseventeenname = localStorage.getItem("17");
-          console.log(getseventeenname);
+          localStorage.setItem("birthDay", seventeeninput.value);
         }
         else if (day.value == "18") {
           document.getElementById("18").value;
           var eighteeninput = document.getElementById("18");
-          localStorage.setItem("18", eighteeninput.value);
-          var geteighteenname = localStorage.getItem("18");
-          console.log(geteighteenname);
+          localStorage.setItem("birthDay", eighteeninput.value);
         }
         else if (day.value == "19") {
           document.getElementById("19").value;
           var nineteeninput = document.getElementById("19");
-          localStorage.setItem("19", nineteeninput.value);
-          var getnineteenname = localStorage.getItem("19");
-          console.log(getnineteenname);
+          localStorage.setItem("birthDay", nineteeninput.value);
         }
         else if (day.value == "20") {
           document.getElementById("20").value;
           var twentyinput = document.getElementById("20");
-          localStorage.setItem("20", twentyinput.value);
-          var gettwentyname = localStorage.getItem("20");
-          console.log(gettwentyname);
+          localStorage.setItem("birthDay", twentyinput.value);
         }
         else if (day.value == "21") {
           document.getElementById("21").value;
           var twentyoneinput = document.getElementById("21");
-          localStorage.setItem("21", twentyoneinput.value);
-          var gettwentyonename = localStorage.getItem("21");
-          console.log(gettwentyonename);
+          localStorage.setItem("birthDay", twentyoneinput.value);
         }
         else if (day.value == "22") {
           document.getElementById("22").value;
           var twentytwoinput = document.getElementById("22");
-          localStorage.setItem("22", twentytwoinput.value);
-          var gettwentytwoname = localStorage.getItem("22");
-          console.log(gettwentytwoname);
+          localStorage.setItem("birthDay", twentytwoinput.value);
         }
         else if (day.value == "23") {
           document.getElementById("23").value;
           var twentythreeinput = document.getElementById("23");
-          localStorage.setItem("23", twentythreeinput.value);
-          var gettwentythreename = localStorage.getItem("23");
-          console.log(gettwentythreename);
+          localStorage.setItem("birthDay", twentythreeinput.value);
         }
         else if (day.value == "24") {
           document.getElementById("24").value;
           var twentyfourinput = document.getElementById("24");
-          localStorage.setItem("24", twentyfourinput.value);
-          var gettwentyfourname = localStorage.getItem("24");
-          console.log(gettwentyfourname);
+          localStorage.setItem("birthDay", twentyfourinput.value);
         }
         else if (day.value == "25") {
           document.getElementById("25").value;
           var twentyfiveinput = document.getElementById("25");
-          localStorage.setItem("25", twentyfiveinput.value);
-          var gettwentyfivename = localStorage.getItem("25");
-          console.log(gettwentyfivename);
+          localStorage.setItem("birthDay", twentyfiveinput.value);
         }
         else if (day.value == "26") {
           document.getElementById("26").value;
           var twentysixinput = document.getElementById("26");
-          localStorage.setItem("26", twentysixinput.value);
-          var gettwentysixname = localStorage.getItem("26");
-          console.log(gettwentysixname);
+          localStorage.setItem("birthDay", twentysixinput.value);
         }
         else if (day.value == "27") {
           document.getElementById("27").value;
           var twentyseveninput = document.getElementById("27");
-          localStorage.setItem("27", twentyseveninput.value);
-          var gettwentysevenname = localStorage.getItem("27");
-          console.log(gettwentysevenname);
+          localStorage.setItem("birthDay", twentyseveninput.value);
         }
         else if (day.value == "28") {
           document.getElementById("28").value;
           var twentyeightinput = document.getElementById("28");
-          localStorage.setItem("28", twentyeightinput.value);
-          var gettwentyeightname = localStorage.getItem("28");
-          console.log(gettwentyeightname);
+          localStorage.setItem("birthDay", twentyeightinput.value);
         }
         else if (day.value == "29") {
           document.getElementById("29").value;
           var twentynineinput = document.getElementById("29");
-          localStorage.setItem("29", twentynineinput.value);
-          var gettwentyninename = localStorage.getItem("29");
-          console.log(gettwentyninename);
+          localStorage.setItem("birthDay", twentynineinput.value);
         }
         else if (day.value == "30") {
           document.getElementById("30").value;
           var thirtyinput = document.getElementById("30");
-          localStorage.setItem("30", thirtyinput.value);
-          var getthirtyname = localStorage.getItem("30");
-          console.log(getthirtyname);
+          localStorage.setItem("birthDay", thirtyinput.value);
         }
         else if (day.value == "31") {
           document.getElementById("31").value;
           var thirtyoneinput = document.getElementById("31");
-          localStorage.setItem("31", thirtyoneinput.value);
-          var getthirtyonename = localStorage.getItem("31");
-          console.log(getthirtyonename);
+          localStorage.setItem("birthDay", thirtyoneinput.value);
         }
         else {
           alert ("you did not enter your date of birth");
@@ -490,6 +433,7 @@
       </script>
 
   </div>
+  <div id="birthday_results">Birthday</div>
 </body>
 <head>
 <title>Ethnicity</title>
@@ -538,9 +482,6 @@
   .show {display:block;}
 </style>
 
-
-<meta charset = "utf-8">
-  <link rel= "stylesheet" type ="text/css" href= "ethnicity.css">
 </head>
 
 
@@ -549,12 +490,14 @@
   <h1>Ethnicity</h1>
   <p>Please Choose Your Ethnicity</p>
   <form action="PayslipServlet" method="get">
-  <input type = "checkbox" name="Asian / Pacific Islander" id="A" value = "Asian / Pacific Islander" onClick="A" > Asian / Pacific Islander
+  <input type = "checkbox" nasme="Asian / Pacific Islander" id="A" value = "Asian / Pacific Islander" onClick="A" > Asian / Pacific Islander
   <input type= "checkbox" name =" White " id= "W" value = "White " > White
   <input type = "checkbox" name = "Latino or Hispanic" id = "L" value = "Latino or Hispanic" > Latino or Hispanic
   <input type = "checkbox" name = "Black or African American" id = "B"value ="Black or African American" > Black or African American
   <input type = "checkbox" name = "Other" id = "O" value= "Other">other
-  <!--Ethnicity: <span id="result2"></span>-->
+
+  <div id="ethnicityResult"></div>
+
   <input type = "button" value= "submit" onClick="e()">
 
   </form>
@@ -563,44 +506,31 @@
     if (document.getElementById("A").checked == true) {
       document.getElementById('A').value;
       var ainput = document.getElementById("A");
-      localStorage.setItem("A", ainput.value);
-      var getaname = localStorage.getItem("A");
-      console.log(getaname);
+      localStorage.setItem("ethnicity", ainput.value);
     }
     else if (document.getElementById("W").checked == true) {
       document.getElementById('W').value;
       var winput = document.getElementById("W");
-      localStorage.setItem("W", winput.value);
-      var getwname = localStorage.getItem("W");
-      console.log(getwname);
+      localStorage.setItem("ethnicity", winput.value);
     }
     else if (document.getElementById("B").checked == true) {
       document.getElementById('B').value;
       var binput = document.getElementById("B");
-      localStorage.setItem("B", binput.value);
-      var getbname = localStorage.getItem("B");
-      console.log(getbname);
+      localStorage.setItem("ethnicity", binput.value);
     }
     else if (document.getElementById("L").checked == true) {
       document.getElementById('L').value;
       var linput = document.getElementById("L");
-      localStorage.setItem("L", linput.value);
-      var getlname = localStorage.getItem("L");
-      console.log(getlname);
-
+      localStorage.setItem("ethnicity", linput.value);
     }
     else if (document.getElementById("O").checked == true) {
       document.getElementById('O').value;
       var oinput = document.getElementById("O");
-      localStorage.setItem("O", oinput.value);
-      var getoname = localStorage.getItem("O");
-      console.log(getoname);
+      localStorage.setItem("ethnicity", oinput.value);
     }
     else {
     alert ("An ethnicity was not chosen");
     }
-
-
     /*document.getElementById("result2").innerHTML = document.getElementById('A').value + " " + document.getElementById('W').value + " " + document.getElementById('B').value+ " " + document.getElementById('L').value + " " + document.getElementById('O').value + " " + document.getElementById('S').value ;
     var ainput = document.getElementById("A");
     localStorage.setItem("A", ainput.value);
@@ -626,14 +556,34 @@
     console.log(getoname);
     var getsname = localStorage.getItem("S");
     console.log(getsname);*/
-
-
   }
   var i;
-
   console.log("local storage");
   for (i = 0; i < localStorage.length; i++)   {
     console.log(localStorage.key(i) + "=[" + localStorage.getItem(localStorage.key(i)) + "]");
+  }
+  // <!-- init -->
+  window.onload = init;
+  function init () {
+
+    // name
+    document.getElementById("fname").value = localStorage.getItem("fname");
+    document.getElementById("mname").value = localStorage.getItem("mname");
+    document.getElementById("lname").value = localStorage.getItem("lname");
+    document.getElementById("result").innerHTML = localStorage.getItem("fname") + " " + localStorage.getItem("mname") + " " +
+    localStorage.getItem("lname");
+
+    document.getElementById("months").value =
+    localStorage.getItem('birthMonth');
+    document.getElementById("days").value =
+    localStorage.getItem('birthDay');
+    document.getElementById("year").value =
+    localStorage.getItem('year');
+    document.getElementById("birthday_results").style.visibility = "visible";
+    document.getElementById("birthday_results").innerHTML = "Birthdate: " + localStorage.getItem("birthMonth") + "/ " + localStorage.getItem("birthDay") + "/ " +
+    localStorage.getItem("year");
+
+    // document.getElementById("ethnicityResult").innerHTML = localStorage.getItem("ethnicity");
   }
   </script>
 <script type="text/javascript">
@@ -655,11 +605,19 @@
 //     }
 //   }
 // }-->
-
 </script>
 
   <h1>Blood Type</h1>
-  <input type="string" id ="blood type">
+  <select id="bloodLetter" selected="A">
+    <option id = "A" value="A">A</option>
+    <option id = "B" value="B">B</option>
+    <option id = "AB" value="AB">AB</option>
+    <option id = "O" value="O">O</option
+  </select>
+  <select id="blood_posneg" selected="pos">
+    <option id = "pos" value="pos">+</option>
+    <option id = "neg" value="neg">-</option>
+  </select>
   <input type = "button" value= "Submit" onClick="bt()">
 
   <script>
@@ -669,12 +627,12 @@
     localStorage.setItem("blood type", btinput.value);
     var getbtname = localStorage.getItem("blood type");
     console.log(getbtname);
-}
 
+}
   </script>
 
-<a href="medical_history.html"><img src="img/nextbutton.jpg" height="42" width="42"></a>
-<a href="index.html"><img src="img/backbutton.jpg" height="42" width="42"></a>
-
+  <br>
+  <a href="index.html"><img src="img/backbutton.jpg" height="42" width="42"></a>
+  <a href="medical_history.html"><img src="img/nextbutton.jpg" height="42" width="42"></a>
 </body>
-</html>
+
