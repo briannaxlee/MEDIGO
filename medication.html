@@ -3,30 +3,28 @@
 
 <head>
   <meta charset="utf-8">
-  <link rel="stylesheet" type="text/css" href="css/index.css">
+  <!-- <link rel="stylesheet" type="text/css" href="css/index.css"> -->
   <title>MEDIGO</title>
 
   <!-- css -->
   <style>
+  div {
+    padding: 10px;
+  }
 
   body {
     align-items: center;
     text-align: center;
   }
-
   #alAns {
     display: none;
   }
-
   #results {
     display: none;
   }
-
   #alQues {
     display: block;
   }
-
-
   </style>
 </head>
 
@@ -50,13 +48,13 @@
       <!-- <input type="text" name="myInputs[]" placeholder="Username"> -->
      <div id="dynamic">
        <label>
-        Entry 1 </label><input type="text" name="myInputs[]">
+        Entry 1 </label><input type="text" name="AllergyInputs[]">
      </div>
-     <input type="button" value="Add another" onClick="addInput('dynamic');">
+     <input type="button" value="Add another" onClick="addInputs('dynamic');">
     </form>
 
     <!-- button for finish -->
-    <input type="button" value="finished" onClick="submitAllergy();">
+    <input type="button" value="finish1" onClick="submitAllergy();">
   </div>
 
   <div id="MedicationEntries">
@@ -66,14 +64,17 @@
       <!-- <input type="text" name="myInputs[]" placeholder="Username"> -->
      <div id="dynamicInput">
        <label>
-        Entry 1 </label><input type="text" name="myInputs[]">
+        Entry 1 </label><input type="text" name="MedicalInputs[]">
      </div>
      <input type="button" value="Add another" onClick="addInput('dynamicInput');">
     </form>
 
     <!-- button for finish -->
-    <input type="button" value="finished" onClick="submitMed();">
+    <input type="button" value="finish2" onclick="submitMed(); displayStorage();">
+    <!-- displayStorage(); -->
   </div>
+
+  <div id="displayStorage">Final</div>
 
 
 <!-- JAVASCRIPT-->
@@ -88,14 +89,12 @@
     // changeAl.onclick = alQues();
     document.getElementById("alAns").style.display = "block";
   }
-
   function buttonno() {
     localStorage.setItem("allergic_no", "I am no allergic to any  medications");
     document.getElementById("alQues").style.display = "none";
     document.getElementById("results").style.display = "block";
     document.getElementById("results").innerHTML = "You are not allergic to any medications";
   }
-
   function alQues() {
     document.getElementById("results").style.display = "none";
     document.getElementById("results").innerHTML = "";
@@ -103,20 +102,26 @@
     document.getElementById("alQues").style.display = "block";
   }
 
-
-  var counter = 1;
-  function addInput(divName) {
+  function addInputs(divName) {
+          var counter = 1;
           var newdiv = document.createElement('div');
-          newdiv.innerHTML = "<lable>Entry " + (counter + 1) + " </lable>" + "<input type='text' name='myInputs[]'>";
+          newdiv.innerHTML = "<lable>Entry " + (counter + 1) + " </lable>" + "<input type='text' name='AllergyInputs[]'>";
+          document.getElementById(divName).appendChild(newdiv);
+          counter++;
+  }
+
+
+  function addInput(divName) {
+          var counter = 1;
+          var newdiv = document.createElement('div');
+          newdiv.innerHTML = "<lable>Entry " + (counter + 1) + " </lable>" + "<input type='text' name='MedicalInputs[]'>";
           document.getElementById(divName).appendChild(newdiv);
           counter++;
   }
 
   function submitAllergy() {
-
-    var userAlInput = document.getElementsByName("myInputs[]");
+    var userAlInput = document.getElementsByName("AllergyInputs[]");
     console.log(userAlInput);
-
     for (i=0; i<userAlInput.length; i++) {
       console.log(userAlInput[i].value);
       localStorage.setItem("allergyInput" + i, userAlInput[i].value);
@@ -124,23 +129,42 @@
     }
   }
 
+  // function submitMed() {
+  //   var userMedInput = document.getElementsByName("myInputs[]");
+  //   // console.log(userMedInput);
+  //   for (i=0; i<userMedInput.length; i++) {
+  //     console.log(userMedInput[i].value);
+  //     localStorage.setItem("medicationInput" + i, userMedInput[i].value);
+  //     var getMedInput = localStorage.getItem("medicationInput" + i);
+  //     console.log(getMedInput);
+  //   }
+  // }
+
   function submitMed() {
-
-    var userMedInput = document.getElementsByName("myInputs[]");
+    var MedsArray = [];
+    var userMedInput = document.getElementsByName("MedicalInputs[]");
     console.log(userMedInput);
-
+    // console.log(userMedInput);
     for (i=0; i<userMedInput.length; i++) {
-      console.log(userMedInput[i].value);
-      localStorage.setItem("medicationInput" + i, userMedInput[i].value);
-      var getMedInput = localStorage.getItem("medicationInput" + i);
-      console.log(getMedInput);
+      console.log(userMedInput[i]);
+      MedsArray.push(userMedInput[i].value);
     }
-  document.write()
+    localStorage.setItem('MedicationEntries', JSON.stringify(MedsArray));
+  }
 
-  // document.createElement("div");
-  // document.getElementById("MedicationEntries").appendChild(div);
+  // identify div element
+  // print all values in stirng medication entries onto the screen
+  function displayStorage() {
+    document.getElementById("displayStorage")
+
+
 
   }
+
+
+
+
+
 
 
 
@@ -152,4 +176,5 @@
 </body>
 
 </html>
+
 
