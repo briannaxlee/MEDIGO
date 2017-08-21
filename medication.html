@@ -2,6 +2,8 @@
 <html>
 
 <head>
+  <link rel="stylesheet" type="text/css" href="css/index2.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <meta charset="utf-8">
   <!-- <link rel="stylesheet" type="text/css" href="css/index.css"> -->
   <title>MEDIGO</title>
@@ -11,7 +13,6 @@
   div {
     padding: 10px;
   }
-
   body {
     align-items: center;
     text-align: center;
@@ -70,15 +71,19 @@
     </form>
 
     <!-- button for finish -->
-    <input type="button" value="finish2" onclick="submitMed(); displayStorage();">
+    <input type="button" value="finish2" onclick="submitMed();">
     <!-- displayStorage(); -->
   </div>
 
-  <div id="displayStorage">Final</div>
+  <div id="displayEntries"></div>
+
+
 
 
 <!-- JAVASCRIPT-->
   <script type="text/javascript">
+  window.init
+
   function buttonyes() {
     localStorage.setItem("allergic_yes", "I am allergic to certain medications");
     document.getElementById("alQues").style.display = "none";
@@ -101,7 +106,6 @@
     document.getElementById("alAns").style.display = "none";
     document.getElementById("alQues").style.display = "block";
   }
-
   function addInputs(divName) {
           var counter = 1;
           var newdiv = document.createElement('div');
@@ -109,8 +113,6 @@
           document.getElementById(divName).appendChild(newdiv);
           counter++;
   }
-
-
   function addInput(divName) {
           var counter = 1;
           var newdiv = document.createElement('div');
@@ -139,7 +141,6 @@
   //     console.log(getMedInput);
   //   }
   // }
-
   function submitMed() {
     var MedsArray = [];
     var userMedInput = document.getElementsByName("MedicalInputs[]");
@@ -150,31 +151,23 @@
       MedsArray.push(userMedInput[i].value);
     }
     localStorage.setItem('MedicationEntries', JSON.stringify(MedsArray));
+    var MyMedsShow = JSON.parse(localStorage.getItem('MedicationEntries'));
+    window.
+    console.log(MyMedsShow);
+    document.getElementById("displayEntries").innerHTML = MyMedsShow;
   }
 
-  // identify div element
-  // print all values in stirng medication entries onto the screen
-  function displayStorage() {
-    document.getElementById("displayStorage")
-
-
-
+  window.onload = init;
+  function init () {
+    document.getElementById("displayEntries").innerHTML = JSON.parse(localStorage.getItem('MedicationEntries'));
   }
-
-
-
-
-
-
-
-
-
-
 
   </script>
+
+  <a href="medical_history.html"><img src="img/backbutton.jpg" height="42" width="42"></a>
+  <a href="medication.html"><img src="img/nextbutton.jpg" height="42" width="42"></a>
 
 </body>
 
 </html>
-
 
