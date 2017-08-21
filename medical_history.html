@@ -1,4 +1,4 @@
-  
+
 <!DOCTYPE html>
 <html>
 
@@ -25,45 +25,281 @@ table, th, td {
       <h2>Constitutional/Systemic</h2>
       <p>What's your current height? <input type="numbers" id ="height"><br>
         What's your current weight? <input type="number" id ="weight"><br>
-        Have you had recent fevers, night sweats or chills? <input type="checkbox" name="fever or chills" value="Yes">Yes <input type="checkbox" name="fevers and chills">No<br>
+        Have you had recent fevers, night sweats or chills? <input type="checkbox" name="fever or chills" id = "yes" value="Yes">Yes <input type="checkbox" name="fevers and chills" id ="no" value="no">No<br>
+        <input type="button" value="Submit" onClick="cs()">
     </section>
+    <script>
+    function cs(){
+      var heightinput = document.getElementById("height");
+      localStorage.setItem("height", heightinput.value);
+      var weightinput = document.getElementById("weight");
+      localStorage.setItem("weight", weightinput.value);
+      var getheightname = localStorage.getItem("height");
+      console.log(getheightname);
+      var getweightname = localStorage.getItem("weight");
+      console.log(getweightname);
+      if (document.getElementById("yes").checked == true) {
+        document.getElementById("yes").value;
+        var yesinput = document.getElementById("yes");
+        localStorage.setItem("yes", yesinput.value);
+        var getyesname = localStorage.getItem("yes");
+        console.log(getyesname);
+      }
+      else if (document.getElementById("no").checked == true) {
+        document.getElementById("no").value;
+        var noinput = document.getElementById("no");
+        localStorage.setItem("no", noinput.value);
+        var getnoname = localStorage.getItem("no");
+        console.log(getnoname);
+      }
+    }
+  </script>
+
+
     <section>
       <h2>Major illnesses or surgeries?</h2>
-        <p>Have you had any major illnesses or surgeries? <input type="checkbox" name="weight loss" value="Yes">Yes <input type="checkbox" name="weight loss" value="No">No<br>
-        Condition <input type="string" id ="conditions"> year <input type="numbers" id ="condition year"><br>
-        Condition <input type="string" id ="conditions"> year <input type="numbers" id ="condition year"><br>
-        Condition <input type="string" id ="conditions"> year <input type="numbers" id ="condition year"><br>
-        Condition <input type="string" id ="conditions"> year <input type="numbers" id ="condition year"><br></p>
+        <p>Have you had any major illnesses or surgeries? <input type="checkbox" name="weight loss" id = "yes" value="Yes">Yes <input type="checkbox" name="weight loss" id = "no" value="No">No<br>
+        Condition <input type="string" id ="conditions1"> year <input type="numbers" id ="year1"><br>
+        Condition <input type="string" id ="conditions2"> year <input type="numbers" id ="year2"><br>
+        Condition <input type="string" id ="conditions3"> year <input type="numbers" id ="year3"><br>
+        Condition <input type="string" id ="conditions4"> year <input type="numbers" id ="year4"><br></p>
+        <input type="button" value="Submit" onClick = "mis()">
     </section>
+    <script>
+    function mis(){
+      var conditions1input = document.getElementById("conditions1");
+      localStorage.setItem("conditions1", conditions1input.value);
+      var year1input = document.getElementById("year1");
+      localStorage.setItem("year1", year1input.value);
+      var getconditions1name = localStorage.getItem("conditions1");
+      console.log(getconditions1name);
+      var getyear1name = localStorage.getItem("year1");
+      console.log(getyear1name);
+      var conditions2input = document.getElementById("conditions2");
+      localStorage.setItem("conditions2", conditions2input.value);
+      var year2input = document.getElementById("year2");
+      localStorage.setItem("year2", year2input.value);
+      var getconditions2name = localStorage.getItem("conditions2");
+      console.log(getconditions2name);
+      var getyear2name = localStorage.getItem("year2");
+      console.log(getyear2name);
+      var conditions3input = document.getElementById("conditions3");
+      localStorage.setItem("conditions3", conditions3input.value);
+      var year3input = document.getElementById("year3");
+      localStorage.setItem("year3", year3input.value);
+      var getconditions3name = localStorage.getItem("conditions3");
+      console.log(getconditions3name);
+      var getyear3name = localStorage.getItem("year3");
+      console.log(getyear3name);
+      var conditions4input = document.getElementById("conditions4");
+      localStorage.setItem("conditions4", conditions4input.value);
+      var year4input = document.getElementById("year4");
+      localStorage.setItem("year4", year4input.value);
+      var getconditions4name = localStorage.getItem("conditions4");
+      console.log(getconditions4name);
+      var getyear4name = localStorage.getItem("year4");
+      console.log(getyear4name);
+      if (document.getElementById("yes").checked == true) {
+        document.getElementById("yes").value;
+        var yesinput = document.getElementById("yes");
+        localStorage.setItem("yes", yesinput.value);
+        var getyesname = localStorage.getItem("yes");
+        console.log(getyesname);
+      }
+      else if (document.getElementById("no").checked == true) {
+        document.getElementById("no").value;
+        var noinput = document.getElementById("no");
+        localStorage.setItem("no", noinput.value);
+        var getnoname = localStorage.getItem("no");
+        console.log(getnoname);
+      }
+    }
+    </script>
     <section>
       <h2>Lifestyle</h2>
-      <p><b>a.</b><br>Have you ever smoked cigarettes? <input type="checkbox" name="cigarettes" value="Yes">Yes <input type="checkbox" name="cigarettes" value="No">No<br>
-        How many years have you smoked?<input type="number" id ="cigarette year"><br>
-        How many packs? <input type="number" id ="cigarette packs"><br>
-        Have you used tobacco in other forms (pipe, cigars, chew)? <input type="checkbox" name="tobacco" value="Yes">Yes <input type="checkbox" name="tobacco" value="No">No<br>
-        Are you exposed to "second hand" smoke? <input type="checkbox" name="second hand" value="Yes">Yes <input type="checkbox" name="second hand" value="No">No<br>
-        <p><b>b.</b><br>Do you drink alcholic beverages?<input type="checkbox" name="alcholic beverages" value="Yes">Yes <input type="checkbox" name="alcholic beverages" value="No">No<br>
-          How many drinks per day? <input type="number" id ="number of drinks"><br>
-          Do you have or do others express concerns about your drinking? <input type="number" id ="drinking concern"><br>
-        Do you have intolerance of any particular foods (lactose, gluten, etc.)? <input type="string" id ="intolerance foods"><br></p>
+      <p><b>a.</b><br>Have you ever smoked cigarettes? <input type="checkbox" name="cigarettes" id = "yes1" value="Yes">Yes <input type="checkbox" name="cigarettes" id = "no1" value="No">No<br>
+        How many years have you smoked?<input type="number" id ="year"><br>
+        How many packs? <input type="number" id ="packs"><br>
+        Have you used tobacco in other forms (pipe, cigars, chew)? <input type="checkbox" name="tobacco" id = "yes2" value="Yes">Yes <input type="checkbox" name="tobacco" id = "no2" value="No">No<br>
+        Are you exposed to "second hand" smoke? <input type="checkbox" name="second hand" id = "yes3" value="Yes">Yes <input type="checkbox" name="second hand" id  = "no3" value="No">No<br>
+        <input type = "button" value="Submit" onClick="a()">
+        <p><b>b.</b><br>Do you drink alcholic beverages?<input type="checkbox" name="alcholic beverages" id = "yes4" value="Yes">Yes <input type="checkbox" name="alcholic beverages" id = "no4" value="No">No<br>
+        How many drinks per day? <input type="number" id ="drinks"><br>
+        Do you have or do others express concerns about your drinking? <input type="string" id ="concerns"><br>
+        Do you have intolerance of any particular foods (lactose, gluten, etc.)? <input type="string" id ="foods"><br></p>
+        <input type = "button" value="Submit" onClick="b()">
     </section>
+    <script>
+    function a(){
+      var yearinput = document.getElementById("year");
+      localStorage.setItem("year", yearinput.value);
+      var packsinput = document.getElementById("packs");
+      localStorage.setItem("packs", packsinput.value);
+      var getyearname = localStorage.getItem("year");
+      console.log(getyearname);
+      var getpacksname = localStorage.getItem("packs");
+      console.log(getpacksname);
+
+      if (document.getElementById("yes1").checked == true) {
+        document.getElementById("yes1").value;
+        var yes1input = document.getElementById("yes1");
+        localStorage.setItem("yes1", yes1input.value);
+        var getyes1name = localStorage.getItem("yes1");
+        console.log(getyes1name);
+      }
+      else if (document.getElementById("no1").checked == true) {
+        document.getElementById("no1").value;
+        var no1input = document.getElementById("no1");
+        localStorage.setItem("no1", no1input.value);
+        var getno1name = localStorage.getItem("no1");
+        console.log(getno1name);
+      }
+      if (document.getElementById("yes2").checked == true) {
+        document.getElementById("yes2").value;
+        var yes2input = document.getElementById("yes2");
+        localStorage.setItem("yes2", yes2input.value);
+        var getyes2name = localStorage.getItem("yes2");
+        console.log(getyes2name);
+      }
+      else if (document.getElementById("no2").checked == true) {
+        document.getElementById("no2").value;
+        var no2input = document.getElementById("no2");
+        localStorage.setItem("no2", no2input.value);
+        var getno2name = localStorage.getItem("no2");
+        console.log(getno2name);
+      }
+      if (document.getElementById("yes3").checked == true) {
+        document.getElementById("yes3").value;
+        var yes3input = document.getElementById("yes3");
+        localStorage.setItem("yes3", yes3input.value);
+        var getyes3name = localStorage.getItem("yes3");
+        console.log(getyes3name);
+      }
+      else if (document.getElementById("no3").checked == true) {
+        document.getElementById("no3").value;
+        var no3input = document.getElementById("no3");
+        localStorage.setItem("no3", no3input.value);
+        var getno3name = localStorage.getItem("no3");
+        console.log(getno3name);
+      }
+    }
+    function b(){
+      var drinksinput = document.getElementById("drinks");
+      localStorage.setItem("drinks", drinksinput.value);
+      var concernsinput = document.getElementById("concerns");
+      localStorage.setItem("concerns", concernsinput.value);
+      var getdrinksname = localStorage.getItem("drinks");
+      console.log(getdrinksname);
+      var getconcernsname = localStorage.getItem("concerns");
+      console.log(getconcernsname);
+      var foodsinput = document.getElementById("foods");
+      localStorage.setItem("foods", foodsinput.value);
+      var getfoodsname = localStorage.getItem("foods");
+      console.log(getfoodsname);
+
+      if (document.getElementById("yes4").checked == true) {
+        document.getElementById("yes4").value;
+        var yes4input = document.getElementById("yes4");
+        localStorage.setItem("yes4", yes4input.value);
+        var getyes4name = localStorage.getItem("yes4");
+        console.log(getyes4name);
+      }
+      else if (document.getElementById("no4").checked == true) {
+        document.getElementById("no4").value;
+        var no4input = document.getElementById("no4");
+        localStorage.setItem("no4", no4input.value);
+        var getno4name = localStorage.getItem("no4");
+        console.log(getno4name);
+      }
+    }
+    </script>
     <section>
       <h2>Have you tested for:</h2>
-      <input type="checkbox" name="chicken pox" value="Chicken Pox">Chicken Pox<br>
-      <input type="checkbox" name="tuberculosis" value="Tuberculosis">Tuberculosis<br>
-      <input type="checkbox" name="hiv" value="HIV">HIV<br>
-      <input type="checkbox" name="hepatitis" value="Hepatitis">Hepatitis: <input type="string" name="hepatitis type"><br>
-      <input type="checkbox" name="std" value="Veneral (sexually transmitted) diseases">Veneral (sexually transmitted) diseases:<input type="string" name="std type"><br>
+      <input type="checkbox" name="chicken pox" id ="cp" value="Chicken Pox">Chicken Pox<br>
+      <input type="checkbox" name="tuberculosis" id = "t" value="Tuberculosis">Tuberculosis<br>
+      <input type="checkbox" name="hiv" id ="hiv" value="HIV">HIV<br>
+      <input type="checkbox" name="hepatitis" id = "hep" value="Hepatitis">Hepatitis: <input type="string" id = "ht" name="hepatitis type"><br>
+      <input type="checkbox" name="std" id = "std" value="Veneral (sexually transmitted) diseases">Veneral (sexually transmitted) diseases:<input type="string" name="std type"><br>
+      <input type="button" value="Submit" OnClick ="t()">
     </section>
+    <script>
+    function t(){
+      if (document.getElementById("cp").checked == true) {
+      document.getElementById("cp").value;
+      var cpinput = document.getElementById("cp");
+      localStorage.setItem("cp", cpinput.value);
+      var getcpname = localStorage.getItem("cp");
+      console.log(getcpname);
+    }
+    else if (document.getElementById("t").checked == true) {
+      document.getElementById("t").value;
+      var tinput = document.getElementById("t");
+      localStorage.setItem("t", tinput.value);
+      var gettname = localStorage.getItem("t");
+      console.log(gettname);
+    }
+    else if (document.getElementById("hiv").checked == true) {
+      document.getElementById("hiv").value;
+      var hivinput = document.getElementById("hiv");
+      localStorage.setItem("hiv", hivinput.value);
+      var gethivname = localStorage.getItem("hiv");
+      console.log(gethivname);
+    }
+    else if (document.getElementById("hep").checked == true) {
+      document.getElementById("hep").value;
+      var hepinput = document.getElementById("hep");
+      localStorage.setItem("hep", hepinput.value);
+      var gethepname = localStorage.getItem("hep");
+      console.log(gethepname);
+    }
+    var htinput = document.getElementById("ht");
+    localStorage.setItem("ht", htinput.value);
+    var gethtname = localStorage.getItem("ht");
+    console.log(gethtname);
+  }
+    </script>
     <section>
       <h2>Head, Hearing, Vision</h2>
-      <p><b>Do you suffer with:</b><br>Headache or migraine <input type="checkbox" name="headache migraine" value="Yes">Yes <input type="checkbox" name="headache migraine" value="No">No <input type="checkbox" name="headache migraine" value="Not Sure">Not Sure<br>
-        Eye or vision problem <input type="checkbox" name="vision problems" value="Yes">Yes <input type="checkbox" name="vision problems" value="No">No <input type="checkbox" name="vision problems" value="Not Sure">Not Sure<br>
-        Eyeglasses or contact lenses? <input type="checkbox" name="glasses contacts" value="Yes">Yes <input type="checkbox" name="glasses contacts" value="No">No <input type="checkbox" name="glasses contacts" value="Not Sure">Not Sure<br>
-        If so, when was your most recent change in lens prescription? <input type="checkbox" name="prescription" value="Yes">Yes <input type="checkbox" name="prescription" value="No">No <input type="checkbox" name="prescription" value="Not Sure">Not Sure<br>
-        Have you ever had any surgeries of your eyes? <input type="checkbox" name="eye surgeries" value="Yes">Yes <input type="checkbox" name="eye surgeries" value="No">No <input type="checkbox" name="eye surgeries" value="Not Sure">Not Sure<br>
-        Ear or hearing problem <input type="checkbox" name="ear problems" value="Yes">Yes <input type="checkbox" name="ear problems" value="No">No <input type="checkbox" name="ear problems" value="Not Sure">Not Sure<br></p>
+      <p><b>Do you suffer with:</b><br>Headache or migraine <input type="checkbox" name="headache migraine" id = "yes5" value="Yes">Yes <input type="checkbox" name="headache migraine" id = "no5"value="No">No <input type="checkbox" name="headache migraine" value="Not Sure">Not Sure<br>
+        Eye or vision problem <input type="checkbox" name="vision problems" id = "yes6" value="Yes">Yes <input type="checkbox" name="vision problems" id = "no6" value="No">No <input type="checkbox" name="vision problems" value="Not Sure">Not Sure<br>
+        Eyeglasses or contact lenses? <input type="checkbox" name="glasses contacts" id = "yes7" value="Yes">Yes <input type="checkbox" name="glasses contacts" id = "no6" value="No">No <input type="checkbox" name="glasses contacts" value="Not Sure">Not Sure<br>
+        If so, when was your most recent change in lens prescription? <input type="checkbox" name="prescription" id = "yes8" value="Yes">Yes <input type="checkbox" name="prescription" value="No">No <input type="checkbox" name="prescription" id = "no8" value="Not Sure">Not Sure<br>
+        Have you ever had any surgeries of your eyes? <input type="checkbox" name="eye surgeries" id = "yes9" value="Yes">Yes <input type="checkbox" name="eye surgeries" id ="no9" value="No">No <input type="checkbox" name="eye surgeries" value="Not Sure">Not Sure<br>
+        Ear or hearing problem <input type="checkbox" name="ear problems" id = "yes10" value="Yes">Yes <input type="checkbox" name="ear problems" id = "no10" value="No">No <input type="checkbox" name="ear problems" value="Not Sure">Not Sure<br></p>
+        <input type="button" value="Submit" onClick="hhv()">
     </section>
+    <script>
+    function hhv(){
+      if (document.getElementById("yes6").checked == true) {
+      document.getElementById("yes6").value;
+      var cpinput = document.getElementById("yes6");
+      localStorage.setItem("cp", cpinput.value);
+      var getcpname = localStorage.getItem("cp");
+      console.log(getcpname);
+    }
+    else if (document.getElementById("t").checked == true) {
+      document.getElementById("t").value;
+      var tinput = document.getElementById("t");
+      localStorage.setItem("t", tinput.value);
+      var gettname = localStorage.getItem("t");
+      console.log(gettname);
+    }
+    else if (document.getElementById("hiv").checked == true) {
+      document.getElementById("hiv").value;
+      var hivinput = document.getElementById("hiv");
+      localStorage.setItem("hiv", hivinput.value);
+      var gethivname = localStorage.getItem("hiv");
+      console.log(gethivname);
+    }
+    else if (document.getElementById("hep").checked == true) {
+      document.getElementById("hep").value;
+      var hepinput = document.getElementById("hep");
+      localStorage.setItem("hep", hepinput.value);
+      var gethepname = localStorage.getItem("hep");
+      console.log(gethepname);
+    }
+    }
+    </script>
     <section>
       <h2>Respiratory/Lungs</h2>
       <p><b>Do you:</b><br> Have tuberculosis or pneumonia <input type="checkbox" name="tuberculosis pneumonia" value="Yes">Yes <input type="checkbox" name="tuberculosis pneumonia" value="No">No <input type="checkbox" name="tuberculosis pneumonia" value="Not Sure">Not Sure<br></p>
@@ -138,5 +374,4 @@ table, th, td {
 </body>
 
 </html>
-
 
