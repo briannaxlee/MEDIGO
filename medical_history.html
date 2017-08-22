@@ -45,7 +45,7 @@ table, th, td {
       <h2>Lifestyle</h2>
       <p><b>a.</b><br>Have you ever smoked cigarettes? <input type="checkbox" name="cigarettes" id = "yes1" value="Yes">Yes <input type="checkbox" name="cigarettes" id = "no1" value="No">No<br>
         How many years have you smoked?<input type="number" id ="year"><br>
-        How many packs do you smoke in a day? <input type="number" id ="packs"><br>
+        How many packs? <input type="number" id ="packs"><br>
         Have you used tobacco in other forms (pipe, cigars, chew)? <input type="checkbox" name="tobacco" id = "yes2" value="Yes">Yes <input type="checkbox" name="tobacco" id = "no2" value="No">No<br>
         Are you exposed to "second hand" smoke? <input type="checkbox" name="second hand" id = "yes3" value="Yes">Yes <input type="checkbox" name="second hand" id  = "no3" value="No">No<br>
 
@@ -73,7 +73,7 @@ table, th, td {
       <p><b>Do you suffer with:</b><br>Headache or migraine <input type="checkbox" name="headache migraine" id = "yes5" value="Yes">Yes <input type="checkbox" name="headache migraine" id = "no5"value="No">No<br>
         Eye or vision problem <input type="checkbox" name="vision problems" id = "yes6" value="Yes">Yes <input type="checkbox" name="vision problems" id = "no6" value="No">No<br>
         Eyeglasses or contact lenses? <input type="checkbox" name="glasses contacts" id = "yes7" value="Yes">Yes <input type="checkbox" name="glasses contacts" id = "no7" value="No">No<br>
-        If so, when was your most recent change in lens prescription? <input type="checkbox" name="prescription" id = "yes8" value="Yes">Yes <input type="checkbox" name="prescription" id = "no8"value="No">No<br>
+        If so, when was your most recent change in lens prescription? <input type="string" id = "lenses" name="prescription" <br>
         Have you ever had any surgeries of your eyes? <input type="checkbox" name="eye surgeries" id = "yes9" value="Yes">Yes <input type="checkbox" name="eye surgeries" id ="no9" value="No">No<br>
         Ear or hearing problem <input type="checkbox" name="ear problems" id = "yes10" value="Yes">Yes <input type="checkbox" name="ear problems" id = "no10" value="No">No<br></p>
 
@@ -108,8 +108,8 @@ table, th, td {
       <h2>Neurological</h2>
       <p><b>Have you had or do you have:</b><br> Temporary loss of vision, speech or strength <input type="checkbox" name="temporary loss" id = "yes19" value="Yes">Yes <input type="checkbox" name="temporary loss" id = "no19" value="No">No<br>
         Loss of consciousness <input type="checkbox" name="consciousness" id = "yes20" value="Yes">Yes <input type="checkbox" name="consciousness" id = "no20" value="No">No<br>
-        Dizziness of lightheadedness <input type="checkbox" name="lightheaded" id = "yes21" value="Yes">Yes <input type="checkbox" name="lightheaded" id = "no21"value="No">No<br>
-        Impaired memory of confusion <input type="checkbox" name="memories" id ="yes22" value="Yes">Yes <input type="checkbox" name="memories" id = "no22" value="No">No<br>
+        Dizziness or lightheadedness <input type="checkbox" name="lightheaded" id = "yes21" value="Yes">Yes <input type="checkbox" name="lightheaded" id = "no21"value="No">No<br>
+        Impaired memory or confusion <input type="checkbox" name="memories" id ="yes22" value="Yes">Yes <input type="checkbox" name="memories" id = "no22" value="No">No<br>
         A stroke <input type="checkbox" name="stroke" id = "yes23" value="Yes">Yes <input type="checkbox" name="stroke" id = "no23" value="No">No<br>
         Panic attack <input type="checkbox" name="panic attack" id = "yes24" value="Yes">Yes <input type="checkbox" name="panic attack" id ="no24" value="No">No<br>
         Epilepsy or seizures <input type="checkbox" name="seizures" id = "yes25" value="Yes">Yes <input type="checkbox" name="seizures" id = "no25" value="No">No<br><p>
@@ -380,20 +380,12 @@ table, th, td {
       var getno7name = localStorage.getItem("no7");
       console.log(getno7name);
     }
-    if (document.getElementById("yes8").checked == true) {
-      document.getElementById("yes8").value;
-      var yes8input = document.getElementById("yes8");
-      localStorage.setItem("yes8", yes8input.value);
-      var getyes8name = localStorage.getItem("yes8");
-      console.log(getyes8name);
-    }
-    else if (document.getElementById("no8").checked == true) {
-      document.getElementById("no8").value;
-      var no8input = document.getElementById("no8");
-      localStorage.setItem("no8", no8input.value);
-      var getno8name = localStorage.getItem("no8");
-      console.log(getno8name);
-    }
+      document.getElementById("lenses").value;
+      var lensesinput = document.getElementById("lenses");
+      localStorage.setItem("lenses", lensesinput.value);
+      var getlensesname = localStorage.getItem("lenses");
+      console.log(getlensesname);
+
     if (document.getElementById("yes9").checked == true) {
       document.getElementById("yes9").value;
       var yes9input = document.getElementById("yes9");
