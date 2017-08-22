@@ -224,19 +224,19 @@ table, th, td {
     </section>
     <script>
     function t(){
-      if (document.getElementById("cp").checked == true) {
-      document.getElementById("cp").value;
-      var cpinput = document.getElementById("cp");
-      localStorage.setItem("cp", cpinput.value);
-      var getcpname = localStorage.getItem("cp");
-      console.log(getcpname);
+    if (document.getElementById("cp").checked == true) {
+        document.getElementById("cp").value;
+        var cpinput = document.getElementById("cp");
+        localStorage.setItem("cp", cpinput.value);
+        var getcpname = localStorage.getItem("cp");
+        console.log(getcpname);
     }
-    else if (document.getElementById("t").checked == true) {
-      document.getElementById("t").value;
-      var tinput = document.getElementById("t");
-      localStorage.setItem("t", tinput.value);
-      var gettname = localStorage.getItem("t");
-      console.log(gettname);
+    if (document.getElementById("t").checked == true) {
+        document.getElementById("t").value;
+        var tinput = document.getElementById("t");
+        localStorage.setItem("t", tinput.value);
+        var gettname = localStorage.getItem("t");
+        console.log(gettname);
     }
     if (document.getElementById("hiv").checked == true) {
       document.getElementById("hiv").value;
@@ -245,12 +245,19 @@ table, th, td {
       var gethivname = localStorage.getItem("hiv");
       console.log(gethivname);
     }
-    else if (document.getElementById("hep").checked == true) {
+    if (document.getElementById("hep").checked == true) {
       document.getElementById("hep").value;
       var hepinput = document.getElementById("hep");
       localStorage.setItem("hep", hepinput.value);
       var gethepname = localStorage.getItem("hep");
       console.log(gethepname);
+    }
+    if  (document.getElementById("std").checked == true) {
+      document.getElementById("std").value;
+      var stdinput = document.getElementById("std");
+      localStorage.setItem("std", stdinput.value);
+      var getstdname = localStorage.getItem("std");
+      console.log(getstdname);
     }
     var htinput = document.getElementById("ht");
     localStorage.setItem("ht", htinput.value);
@@ -262,99 +269,99 @@ table, th, td {
       <h2>Head, Hearing, Vision</h2>
       <p><b>Do you suffer with:</b><br>Headache or migraine <input type="checkbox" name="headache migraine" id = "yes5" value="Yes">Yes <input type="checkbox" name="headache migraine" id = "no5"value="No">No<br>
         Eye or vision problem <input type="checkbox" name="vision problems" id = "yes6" value="Yes">Yes <input type="checkbox" name="vision problems" id = "no6" value="No">No<br>
-        Eyeglasses or contact lenses? <input type="checkbox" name="glasses contacts" id = "yes7" value="Yes">Yes <input type="checkbox" name="glasses contacts" id = "no6" value="No">No<br>
-        If so, when was your most recent change in lens prescription? <input type="checkbox" name="prescription" id = "yes8" value="Yes">Yes <input type="checkbox" name="prescription" value="No">No<br>
+        Eyeglasses or contact lenses? <input type="checkbox" name="glasses contacts" id = "yes7" value="Yes">Yes <input type="checkbox" name="glasses contacts" id = "no7" value="No">No<br>
+        If so, when was your most recent change in lens prescription? <input type="checkbox" name="prescription" id = "yes8" value="Yes">Yes <input type="checkbox" name="prescription" id = "no8"value="No">No<br>
         Have you ever had any surgeries of your eyes? <input type="checkbox" name="eye surgeries" id = "yes9" value="Yes">Yes <input type="checkbox" name="eye surgeries" id ="no9" value="No">No<br>
         Ear or hearing problem <input type="checkbox" name="ear problems" id = "yes10" value="Yes">Yes <input type="checkbox" name="ear problems" id = "no10" value="No">No<br></p>
-        <input type="button" value="Submit" onClick="hhv()">
+        <input type="button" value="Submit" onClick="h()">
     </section>
     <script>
-    function hhv(){
-    if (document.getElementById("yes5").checked == true) {
-      document.getElementById("yes5").value;
-      var yes5input = document.getElementById("yes5");
-      localStorage.setItem("yes5", yes5input.value);
-      var getyes5name = localStorage.getItem("yes5");
-      console.log(getyes5name);
-    }
-    else if (document.getElementById("no5").checked == true) {
-      document.getElementById("no5").value;
-      var no5input = document.getElementById("no5");
-      localStorage.setItem("no5", no5input.value);
-      var getno5name = localStorage.getItem("no5");
-      console.log(getno5name);
-    }
-      
-    if document.getElementById("yes6").checked == true) {
-      document.getElementById("yes6").value;
-      var yes6input = document.getElementById("yes6");
-      localStorage.setItem("yes6", yes6input.value);
-      var getyes6name = localStorage.getItem("yes6");
-      console.log(getyes6name);
-    }
-    else if (document.getElementById("no6").checked == true) {
-      document.getElementById("no6").value;
-      var no6input = document.getElementById("no6");
-      localStorage.setItem("no6", no6input.value);
-      var getno6name = localStorage.getItem("no6");
-      console.log(getno6name);
-    }
-    if (document.getElementById("yes7").checked == true) {
-      document.getElementById("yes7").value;
-      var yes7input = document.getElementById("yes7");
-      localStorage.setItem("yes7", yes7input.value);
-      var getyes7name = localStorage.getItem("yes7");
-      console.log(getyes7name);
-    }
-    else if (document.getElementById("no7").checked == true) {
-      document.getElementById("no7").value;
-      var no7input = document.getElementById("no7");
-      localStorage.setItem("no7", no7input.value);
-      var getno7name = localStorage.getItem("no7");
-      console.log(getno7name);
-    }
-    if (document.getElementById("yes8").checked == true) {
-      document.getElementById("yes8").value;
-      var yes8input = document.getElementById("yes8");
-      localStorage.setItem("yes8", yes8input.value);
-      var getyes8name = localStorage.getItem("yes8");
-      console.log(getyes8name);
-    }
-    else if (document.getElementById("no8").checked == true) {
-      document.getElementById("no8").value;
-      var no8input = document.getElementById("no8");
-      localStorage.setItem("no8", no8input.value);
-      var getno8name = localStorage.getItem("no8");
-      console.log(getno8name);
-    }
-    if (document.getElementById("yes9").checked == true) {
-      document.getElementById("yes9").value;
-      var yes9input = document.getElementById("yes9");
-      localStorage.setItem("yes9", yes9input.value);
-      var getyes9name = localStorage.getItem("yes9");
-      console.log(getyes9name);
-    }
-    else if (document.getElementById("no9").checked == true) {
-      document.getElementById("no9").value;
-      var no9input = document.getElementById("no9");
-      localStorage.setItem("no9", no9input.value);
-      var getno9name = localStorage.getItem("no9");
-      console.log(getno9name);
-    }
-    if (document.getElementById("yes10").checked == true) {
-      document.getElementById("yes10").value;
-      var yes10input = document.getElementById("yes10");
-      localStorage.setItem("yes10", yes10input.value);
-      var getyes10name = localStorage.getItem("yes10");
-      console.log(getyes10name);
-    }
-    else if (document.getElementById("no10").checked == true) {
-      document.getElementById("no10").value;
-      var no10input = document.getElementById("no10");
-      localStorage.setItem("no10", no10input.value);
-      var getno10name = localStorage.getItem("no10");
-      console.log(getno10name);
-    }
+    function h(){
+      if (document.getElementById("yes5").checked == true) {
+        document.getElementById("yes5").value;
+        var yes5input = document.getElementById("yes5");
+        localStorage.setItem("yes5", yes5input.value);
+        var getyes5name = localStorage.getItem("yes5");
+        console.log(getyes5name);
+      }
+      else if (document.getElementById("no5").checked == true) {
+        document.getElementById("no5").value;
+        var no5input = document.getElementById("no5");
+        localStorage.setItem("no5", no5input.value);
+        var getno5name = localStorage.getItem("no5");
+        console.log(getno5name);
+      }
+
+      if (document.getElementById("yes6").checked == true) {
+        document.getElementById("yes6").value;
+        var yes6input = document.getElementById("yes6");
+        localStorage.setItem("yes6", yes6input.value);
+        var getyes6name = localStorage.getItem("yes6");
+        console.log(getyes6name);
+      }
+      else if (document.getElementById("no6").checked == true) {
+        document.getElementById("no6").value;
+        var no6input = document.getElementById("no6");
+        localStorage.setItem("no6", no6input.value);
+        var getno6name = localStorage.getItem("no6");
+        console.log(getno6name);
+      }
+      if (document.getElementById("yes7").checked == true) {
+        document.getElementById("yes7").value;
+        var yes7input = document.getElementById("yes7");
+        localStorage.setItem("yes7", yes7input.value);
+        var getyes7name = localStorage.getItem("yes7");
+        console.log(getyes7name);
+      }
+      else if (document.getElementById("no7").checked == true) {
+        document.getElementById("no7").value;
+        var no7input = document.getElementById("no7");
+        localStorage.setItem("no7", no7input.value);
+        var getno7name = localStorage.getItem("no7");
+        console.log(getno7name);
+      }
+      if (document.getElementById("yes8").checked == true) {
+        document.getElementById("yes8").value;
+        var yes8input = document.getElementById("yes8");
+        localStorage.setItem("yes8", yes8input.value);
+        var getyes8name = localStorage.getItem("yes8");
+        console.log(getyes8name);
+      }
+      else if (document.getElementById("no8").checked == true) {
+        document.getElementById("no8").value;
+        var no8input = document.getElementById("no8");
+        localStorage.setItem("no8", no8input.value);
+        var getno8name = localStorage.getItem("no8");
+        console.log(getno8name);
+      }
+      if (document.getElementById("yes9").checked == true) {
+        document.getElementById("yes9").value;
+        var yes9input = document.getElementById("yes9");
+        localStorage.setItem("yes9", yes9input.value);
+        var getyes9name = localStorage.getItem("yes9");
+        console.log(getyes9name);
+      }
+      else if (document.getElementById("no9").checked == true) {
+        document.getElementById("no9").value;
+        var no9input = document.getElementById("no9");
+        localStorage.setItem("no9", no9input.value);
+        var getno9name = localStorage.getItem("no9");
+        console.log(getno9name);
+      }
+      if (document.getElementById("yes10").checked == true) {
+        document.getElementById("yes10").value;
+        var yes10input = document.getElementById("yes10");
+        localStorage.setItem("yes10", yes10input.value);
+        var getyes10name = localStorage.getItem("yes10");
+        console.log(getyes10name);
+      }
+      else if (document.getElementById("no10").checked == true) {
+        document.getElementById("no10").value;
+        var no10input = document.getElementById("no10");
+        localStorage.setItem("no10", no10input.value);
+        var getno10name = localStorage.getItem("no10");
+        console.log(getno10name);
+      }
     }
     </script>
     <section>
@@ -377,51 +384,66 @@ table, th, td {
               var getno11name = localStorage.getItem("no11");
               console.log(getno11name);
             }
+          }
       </script>
     </section>
-    
+
     <section>
       <h2>Cardiovascular</h2>
-      <p><b>Do you have:</b><br> Hypertension (high blood pressure)<input type="checkbox" name="hypertension" id = "yes12" value="Yes">Yes <input type="checkbox" name="hypertension" id = "no11" value="No">No<br>
-      Hyperlipidemina (cholesterol, etc.) <input type="checkbox" name="hyperlipidemia" id= "yes12" value="Yes">Yes <input type="checkbox" name="hyperlipidemia" id = "no12" value="No">No<br>
-      Heart attack, angina <input type="checkbox" name="heart attack" id = "yes13" value="Yes">Yes <input type="checkbox" name="heart attack" id = "no13" value="No">No<br></p>
+      <p><b>Do you have:</b><br> Hypertension (high blood pressure)<input type="checkbox" name="hypertension" id = "yes12" value="Yes">Yes <input type="checkbox" name="hypertension" id = "no12" value="No">No<br>
+      Hyperlipidemina (cholesterol, etc.) <input type="checkbox" name="hyperlipidemia" id= "yes13" value="Yes">Yes <input type="checkbox" name="hyperlipidemia" id = "no13" value="No">No<br>
+      Heart attack, angina <input type="checkbox" name="heart attack" id = "yes14" value="Yes">Yes <input type="checkbox" name="heart attack" id = "no14" value="No">No<br></p>
       <input type="button" value="Submit" onClick="c()">
     </section>
     <script>
-      function c(){
-    if (document.getElementById("yes12").checked == true) {
-      document.getElementById("yes12").value;
-      var yes12input = document.getElementById("yes12");
-      localStorage.setItem("yes12", yes12input.value);
-      var getyes12name = localStorage.getItem("yes12");
-      console.log(getyes12name);
-    }
-    else if (document.getElementById("no12").checked == true) {
-      document.getElementById("no12").value;
-      var no12input = document.getElementById("no12");
-      localStorage.setItem("no12", no12input.value);
-      var getno12name = localStorage.getItem("no12");
-      console.log(getno12name);
-    }
-    if (document.getElementById("yes13").checked == true) {
-      document.getElementById("yes13").value;
-      var yes13input = document.getElementById("yes13");
-      localStorage.setItem("yes13", yes13input.value);
-      var getyes13name = localStorage.getItem("yes13");
-      console.log(getyes13name);
-    }
-    else if (document.getElementById("no13").checked == true) {
-      document.getElementById("no13").value;
-      var no13input = document.getElementById("no13");
-      localStorage.setItem("no13", no13input.value);
-      var getno13name = localStorage.getItem("no13");
-      console.log(getno13name);
-    }
+    function c(){
+      if (document.getElementById("yes12").checked == true) {
+        document.getElementById("yes12").value;
+        var yes12input = document.getElementById("yes12");
+        localStorage.setItem("yes12", yes12input.value);
+        var getyes12name = localStorage.getItem("yes12");
+        console.log(getyes12name);
       }
+      else if (document.getElementById("no12").checked == true) {
+        document.getElementById("no12").value;
+        var no12input = document.getElementById("no12");
+        localStorage.setItem("no12", no12input.value);
+        var getno12name = localStorage.getItem("no12");
+        console.log(getno12name);
+      }
+      if (document.getElementById("yes13").checked == true) {
+        document.getElementById("yes13").value;
+        var yes13input = document.getElementById("yes13");
+        localStorage.setItem("yes13", yes13input.value);
+        var getyes13name = localStorage.getItem("yes13");
+        console.log(getyes13name);
+      }
+      else if (document.getElementById("no13").checked == true) {
+        document.getElementById("no13").value;
+        var no13input = document.getElementById("no13");
+        localStorage.setItem("no13", no13input.value);
+        var getno13name = localStorage.getItem("no13");
+        console.log(getno13name);
+      }
+      if (document.getElementById("yes14").checked == true) {
+        document.getElementById("yes14").value;
+        var yes14input = document.getElementById("yes14");
+        localStorage.setItem("yes14", yes14input.value);
+        var getyes14name = localStorage.getItem("yes14");
+        console.log(getyes14name);
+      }
+      else if (document.getElementById("no14").checked == true) {
+        document.getElementById("no14").value;
+        var no14input = document.getElementById("no14");
+        localStorage.setItem("no14", no14input.value);
+        var getno14name = localStorage.getItem("no14");
+        console.log(getno14name);
+      }
+    }
     </script>
     <section>
       <h2>Abdominal/Digestive</h2>
-      <p><b>Do you have:</b><br> Ucler <input type="checkbox" name="ulcer" id = "yes14" value="Yes">Yes <input type="checkbox" name="ulcer" id = "no14" value="No">No<br>
+      <p><b>Do you have:</b><br> Ulcer <input type="checkbox" name="ulcer" id = "yes14" value="Yes">Yes <input type="checkbox" name="ulcer" id = "no14" value="No">No<br>
         Jaundice <input type="checkbox" name="jaundice" id = "yes15" value="Yes">Yes <input type="checkbox" name="jaundice" id = "no15" value="No">No<br>
         Liver disease <input type="checkbox" name="liver disease" id = "yes16" value="Yes">Yes <input type="checkbox" name="liver disease" id = "no16" value="No">No<br>
         Gallbladder problems <input type="checkbox" name="gallblader" id = "yes17" value="Yes">Yes <input type="checkbox" name="gallblader" id = "no17" value="No">No<br>
@@ -430,76 +452,76 @@ table, th, td {
     </section>
     <script>
       function ad(){
-     if (document.getElementById("yes14").checked == true) {
-      document.getElementById("yes14").value;
-      var yes14input = document.getElementById("yes14");
-      localStorage.setItem("yes14", yes14input.value);
-      var getyes14name = localStorage.getItem("yes14");
-      console.log(getyes14name);
-    }
-    else if (document.getElementById("no14").checked == true) {
-      document.getElementById("no14").value;
-      var no14input = document.getElementById("no14");
-      localStorage.setItem("no14", no14input.value);
-      var getno14name = localStorage.getItem("no14");
-      console.log(getno14name);
-    }
-    if (document.getElementById("yes15").checked == true) {
-      document.getElementById("yes15").value;
-      var yes15input = document.getElementById("yes15");
-      localStorage.setItem("yes15", yes15input.value);
-      var getyes15name = localStorage.getItem("yes15");
-      console.log(getyes15name);
-    }
-    else if (document.getElementById("no15").checked == true) {
-      document.getElementById("no15").value;
-      var no15input = document.getElementById("no15");
-      localStorage.setItem("no15", no15input.value);
-      var getno15name = localStorage.getItem("no15");
-      console.log(getno15name);
-    }
-    else if (document.getElementById("yes16").checked == true) {
-      document.getElementById("yes16").value;
-      var yes16input = document.getElementById("yes16");
-      localStorage.setItem("yes16", yes16input.value);
-      var getyes16name = localStorage.getItem("yes16");
-      console.log(getyes16name);
-    }
-    else if (document.getElementById("no16").checked == true) {
-      document.getElementById("no16").value;
-      var no16input = document.getElementById("no16");
-      localStorage.setItem("no16", no16input.value);
-      var getno16name = localStorage.getItem("no16");
-      console.log(getno16name);
-    }
-    else if (document.getElementById("yes17").checked == true) {
-      document.getElementById("yes17").value;
-      var yes17input = document.getElementById("yes17");
-      localStorage.setItem("yes17", yes17input.value);
-      var getyes17name = localStorage.getItem("yes17");
-      console.log(getyes17name);
-    }
-    else if (document.getElementById("no17").checked == true) {
-      document.getElementById("no17").value;
-      var no17input = document.getElementById("no17");
-      localStorage.setItem("no17", no17input.value);
-      var getno17name = localStorage.getItem("no17");
-      console.log(getno17name);
-    }
-    else if (document.getElementById("yes18").checked == true) {
-      document.getElementById("yes18").value;
-      var yes18input = document.getElementById("yes18");
-      localStorage.setItem("yes18", yes18input.value);
-      var getyes18name = localStorage.getItem("yes18");
-      console.log(getyes18name);
-    }
-    else if (document.getElementById("no18").checked == true) {
-      document.getElementById("no18").value;
-      var no18input = document.getElementById("no18");
-      localStorage.setItem("no18", no18input.value);
-      var getno18name = localStorage.getItem("no18");
-      console.log(getno18name);
-    }
+        if (document.getElementById("yes14").checked == true) {
+          document.getElementById("yes14").value;
+          var yes14input = document.getElementById("yes14");
+          localStorage.setItem("yes14", yes14input.value);
+          var getyes14name = localStorage.getItem("yes14");
+          console.log(getyes14name);
+        }
+        else if (document.getElementById("no14").checked == true) {
+          document.getElementById("no14").value;
+          var no14input = document.getElementById("no14");
+          localStorage.setItem("no14", no14input.value);
+          var getno14name = localStorage.getItem("no14");
+          console.log(getno14name);
+        }
+        if (document.getElementById("yes15").checked == true) {
+          document.getElementById("yes15").value;
+          var yes15input = document.getElementById("yes15");
+          localStorage.setItem("yes15", yes15input.value);
+          var getyes15name = localStorage.getItem("yes15");
+          console.log(getyes15name);
+        }
+        else if (document.getElementById("no15").checked == true) {
+          document.getElementById("no15").value;
+          var no15input = document.getElementById("no15");
+          localStorage.setItem("no15", no15input.value);
+          var getno15name = localStorage.getItem("no15");
+          console.log(getno15name);
+        }
+        if (document.getElementById("yes16").checked == true) {
+          document.getElementById("yes16").value;
+          var yes16input = document.getElementById("yes16");
+          localStorage.setItem("yes16", yes16input.value);
+          var getyes16name = localStorage.getItem("yes16");
+          console.log(getyes16name);
+        }
+        else if (document.getElementById("no16").checked == true) {
+          document.getElementById("no16").value;
+          var no16input = document.getElementById("no16");
+          localStorage.setItem("no16", no16input.value);
+          var getno16name = localStorage.getItem("no16");
+          console.log(getno16name);
+        }
+        if (document.getElementById("yes17").checked == true) {
+          document.getElementById("yes17").value;
+          var yes17input = document.getElementById("yes17");
+          localStorage.setItem("yes17", yes17input.value);
+          var getyes17name = localStorage.getItem("yes17");
+          console.log(getyes17name);
+        }
+        else if (document.getElementById("no17").checked == true) {
+          document.getElementById("no17").value;
+          var no17input = document.getElementById("no17");
+          localStorage.setItem("no17", no17input.value);
+          var getno17name = localStorage.getItem("no17");
+          console.log(getno17name);
+        }
+        if (document.getElementById("yes18").checked == true) {
+          document.getElementById("yes18").value;
+          var yes18input = document.getElementById("yes18");
+          localStorage.setItem("yes18", yes18input.value);
+          var getyes18name = localStorage.getItem("yes18");
+          console.log(getyes18name);
+        }
+        else if (document.getElementById("no18").checked == true) {
+          document.getElementById("no18").value;
+          var no18input = document.getElementById("no18");
+          localStorage.setItem("no18", no18input.value);
+          var getno18name = localStorage.getItem("no18");
+          console.log(getno18name);
+        }
       }
     </script>
     <section>
@@ -515,112 +537,121 @@ table, th, td {
     </section>
     <script>
       function n(){
-    if (document.getElementById("yes19").checked == true) {
-      document.getElementById("yes19").value;
-      var yes19input = document.getElementById("yes19");
-      localStorage.setItem("yes19", yes19input.value);
-      var getyes19name = localStorage.getItem("yes19");
-      console.log(getyes19name);
-    }
-    else if (document.getElementById("no19").checked == true) {
-      document.getElementById("no19").value;
-      var no19input = document.getElementById("no19");
-      localStorage.setItem("no19", no19input.value);
-      var getno19name = localStorage.getItem("no19");
-      console.log(getno19name);
-    }
-    if (document.getElementById("yes20").checked == true) {
-      document.getElementById("yes20").value;
-      var yes20input = document.getElementById("yes20");
-      localStorage.setItem("yes20", yes20input.value);
-      var getyes20name = localStorage.getItem("yes20");
-      console.log(getyes20name);
-    }
-    else if (document.getElementById("no20").checked == true) {
-      document.getElementById("no20").value;
-      var no20input = document.getElementById("no20");
-      localStorage.setItem("no20", no20input.value);
-      var getno20name = localStorage.getItem("no20");
-      console.log(getno20name);
-    }
-    if (document.getElementById("yes21").checked == true) {
-      document.getElementById("yes21").value;
-      var yes21input = document.getElementById("yes21");
-      localStorage.setItem("yes21", yes21input.value);
-      var getyes21name = localStorage.getItem("yes21");
-      console.log(getyes21name);
-    }
-    else if (document.getElementById("no21").checked == true) {
-      document.getElementById("no21").value;
-      var no21input = document.getElementById("no21");
-      localStorage.setItem("no21", no21input.value);
-      var getno21name = localStorage.getItem("no21");
-      console.log(getno21name);
-    }  
-    if (document.getElementById("yes22").checked == true) {
-      document.getElementById("yes22").value;
-      var yes22input = document.getElementById("yes22");
-      localStorage.setItem("yes22", yes22input.value);
-      var getyes22name = localStorage.getItem("yes22");
-      console.log(getyes22name);
-    }
-    else if (document.getElementById("no22").checked == true) {
-      document.getElementById("no22").value;
-      var no22input = document.getElementById("no22");
-      localStorage.setItem("no22", no22input.value);
-      var getno22name = localStorage.getItem("no22");
-      console.log(getno22name);
-    }
-    if (document.getElementById("yes23").checked == true) {
-      document.getElementById("yes23").value;
-      var yes23input = document.getElementById("yes23");
-      localStorage.setItem("yes23", yes23input.value);
-      var getyes23name = localStorage.getItem("yes23");
-      console.log(getyes23name);
-    }
-    else if (document.getElementById("no23").checked == true) {
-      document.getElementById("no23").value;
-      var no23input = document.getElementById("no23");
-      localStorage.setItem("no23", no7input.value);
-      var getno23name = localStorage.getItem("no23");
-      console.log(getno23name);
-    }
-    if (document.getElementById("yes24").checked == true) {
-      document.getElementById("yes24").value;
-      var yes24input = document.getElementById("yes24");
-      localStorage.setItem("yes24", yes24input.value);
-      var getyes24name = localStorage.getItem("yes24");
-      console.log(getyes24name);
-    }
-    else if (document.getElementById("no24").checked == true) {
-      document.getElementById("no24").value;
-      var no24input = document.getElementById("no24");
-      localStorage.setItem("no24", no24input.value);
-      var getno24name = localStorage.getItem("no24");
-      console.log(getno24name);
-    }
-    if (document.getElementById("yes25").checked == true) {
-      document.getElementById("yes25").value;
-      var yes25input = document.getElementById("yes25");
-      localStorage.setItem("yes25", yes25input.value);
-      var getyes25name = localStorage.getItem("yes25");
-      console.log(getyes25name);
-    }
-    else if (document.getElementById("no25").checked == true) {
-      document.getElementById("no25").value;
-      var no25input = document.getElementById("no25");
-      localStorage.setItem("no25", no25input.value);
-      var getno25name = localStorage.getItem("no25");
-      console.log(getno25name);
-    }
+        if (document.getElementById("yes19").checked == true) {
+          document.getElementById("yes19").value;
+          var yes19input = document.getElementById("yes19");
+          localStorage.setItem("yes19", yes19input.value);
+          var getyes19name = localStorage.getItem("yes19");
+          console.log(getyes19name);
+        }
+        else if (document.getElementById("no19").checked == true) {
+          document.getElementById("no19").value;
+          var no19input = document.getElementById("no19");
+          localStorage.setItem("no19", no19input.value);
+          var getno19name = localStorage.getItem("no19");
+          console.log(getno19name);
+        }
+       if (document.getElementById("yes20").checked == true) {
+         document.getElementById("yes20").value;
+         var yes20input = document.getElementById("yes20");
+         localStorage.setItem("yes20", yes20input.value);
+         var getyes20name = localStorage.getItem("yes20");
+         console.log(getyes20name);
+       }
+       else if (document.getElementById("no20").checked == true) {
+         document.getElementById("no20").value;
+         var no20input = document.getElementById("no20");
+         localStorage.setItem("no20", no20input.value);
+         var getno20name = localStorage.getItem("no20");
+         console.log(getno20name);
+       }
+       if (document.getElementById("yes21").checked == true) {
+         document.getElementById("yes21").value;
+         var yes21input = document.getElementById("yes21");
+         localStorage.setItem("yes21", yes21input.value);
+         var getyes21name = localStorage.getItem("yes21");
+         console.log(getyes21name);
+       }
+       else if (document.getElementById("no21").checked == true) {
+         document.getElementById("no21").value;
+         var no21input = document.getElementById("no21");
+         localStorage.setItem("no21", no21input.value);
+         var getno21name = localStorage.getItem("no21");
+         console.log(getno21name);
+       }
+       if (document.getElementById("yes22").checked == true) {
+         document.getElementById("yes22").value;
+         var yes22input = document.getElementById("yes22");
+         localStorage.setItem("yes22", yes22input.value);
+         var getyes22name = localStorage.getItem("yes22");
+         console.log(getyes22name);
+       }
+       else if (document.getElementById("no22").checked == true) {
+         document.getElementById("no22").value;
+         var no22input = document.getElementById("no22");
+         localStorage.setItem("no22", no22input.value);
+         var getno22name = localStorage.getItem("no22");
+         console.log(getno22name);
+       }
+       if (document.getElementById("yes23").checked == true) {
+         document.getElementById("yes23").value;
+         var yes23input = document.getElementById("yes23");
+         localStorage.setItem("yes23", yes23input.value);
+         var getyes23name = localStorage.getItem("yes23");
+         console.log(getyes23name);
+       }
+       else if (document.getElementById("no23").checked == true) {
+         document.getElementById("no23").value;
+         var no23input = document.getElementById("no23");
+         localStorage.setItem("no23", no7input.value);
+         var getno23name = localStorage.getItem("no23");
+         console.log(getno23name);
+       }
+       if (document.getElementById("yes24").checked == true) {
+         document.getElementById("yes24").value;
+         var yes24input = document.getElementById("yes24");
+         localStorage.setItem("yes24", yes24input.value);
+         var getyes24name = localStorage.getItem("yes24");
+         console.log(getyes24name);
+       }
+       else if (document.getElementById("no24").checked == true) {
+         document.getElementById("no24").value;
+         var no24input = document.getElementById("no24");
+         localStorage.setItem("no24", no24input.value);
+         var getno24name = localStorage.getItem("no24");
+         console.log(getno24name);
+       }
+       if (document.getElementById("yes25").checked == true) {
+         document.getElementById("yes25").value;
+         var yes25input = document.getElementById("yes25");
+         localStorage.setItem("yes25", yes25input.value);
+         var getyes25name = localStorage.getItem("yes25");
+         console.log(getyes25name);
+       }
+       else if (document.getElementById("no25").checked == true) {
+         document.getElementById("no25").value;
+         var no25input = document.getElementById("no25");
+         localStorage.setItem("no25", no25input.value);
+         var getno25name = localStorage.getItem("no25");
+         console.log(getno25name);
+       }
     }
     </script>
     <section>
       <h2>Have we covered everything?</h2>
       <p><b>Please enter any other information about your health that you would like to us to know or address</b><br>
-        <textarea rows="4" cols="50">
-        </textarea>
+        <input ="textarea" id= "ta" rows="4" cols="50">
+        <input type="button" value="Submit" onClick="end()">
     </section>
+    <script>
+    function end(){
+      document.getElementById("ta").value;
+      var tainput = document.getElementById("ta");
+      localStorage.setItem("ta", tainput.value);
+      var gettaname = localStorage.getItem("ta");
+      console.log(gettaname);
+    }
+    </script>
 
 
 
@@ -661,5 +692,6 @@ table, th, td {
 </body>
 
 </html>
+
 
 
