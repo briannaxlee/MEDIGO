@@ -25,7 +25,7 @@
 
   <h1>My Medical Information</h1>
 <!--USER NAME-->
-  <div class="container" id="nameee">
+  <div class="container" id="name">
     <form action="PayslipServlet" method="get">
       First name:   <input type="text" name="fname" id="fname" value="">
       <br>
@@ -97,7 +97,7 @@
 
     <p3>year</p3>
       <input type="number" id="year">
-      <input type="button" value="Submit" onClick="dob()">
+
   </div>
 
   <div class="container" id="birthday_results">Birthday</div>
@@ -112,7 +112,7 @@
   <input type = "checkbox" name = "Black or African American" id = "B"value ="Black or African American" autocomplete="off"> Black or African American
   <input type = "checkbox" name = "Other" id = "O" value= "Other">other
   <div class="container" id="ethnicityResult"></div>
-  <input type = "button" value= "submit" onClick="e();">
+
   </form>
 <!--USER BLOODTYPE-->
   <div class="container" id="blooddiv">
@@ -129,7 +129,7 @@
     <option id = "Oneg" value="O-">O-</option>
   </select>
 
-  <input type = "button" value= "Submit" onClick="bt()">
+  <input type="button" value="Submit" onClick="end()">
 </div>
 <!--NAV buttons-->
   <a href="index.html"><img src="img/backbutton.jpg" height="42" width="42"></a>
@@ -175,7 +175,7 @@
         document.getElementById("bloodLetter").value = localStorage.getItem("blood_type");
     }
 ///////////////////////name
-    function pr(){
+    function end(){
       document.getElementById("result").innerHTML = document.getElementById('fname').value + " " + document.getElementById('mname').value + " " + document.getElementById('lname').value;
       var linput = document.getElementById("lname");
       localStorage.setItem("lname", linput.value);
@@ -189,15 +189,6 @@
       console.log(getlname);
       var getmname = localStorage.getItem("mname");
       console.log(getmname);
-    }
-
-    var i;
-    console.log("local storage");
-    for (i = 0; i < localStorage.length; i++) {
-        console.log(localStorage.key(i) + "=[" + localStorage.getItem(localStorage.key(i)) + "]");
-    }
-///////////////////////birthday
-    function dob(){
       var month = document.getElementById("months");
       var day = document.getElementById("days");
       if (month.value == "Jan") {
@@ -446,13 +437,9 @@
       localStorage.setItem("year", yinput.value);
       var getyname = localStorage.getItem("year");
       console.log(getyname);
-    }
 
-    document.getElementById("birthday_results").innerHTML = "Birthdate: " + localStorage.getItem("birthMonth") + "/ " + localStorage.getItem("birthDay") + "/ " +
-    localStorage.getItem("year");
-
-///////////////////////ethnicity
-    function e(){
+      document.getElementById("birthday_results").innerHTML = "Birthdate: " + localStorage.getItem("birthMonth") + "/ " + localStorage.getItem("birthDay") + "/ " +
+      localStorage.getItem("year");
       if (document.getElementById("A").checked == true) {
         document.getElementById('A').value;
         var ainput = document.getElementById("A");
@@ -481,21 +468,28 @@
       else {
       alert ("An ethnicity was not chosen");
       }
-    }
-
-    var i;
-    console.log("local storage");
-    for (i = 0; i < localStorage.length; i++)   {
-      console.log(localStorage.key(i) + "=[" + localStorage.getItem(localStorage.key(i)) + "]");
-    }
-///////////////////////blood
-    function bt(){
       var btinput = document.getElementById("bloodLetter");
       localStorage.setItem("blood_type", btinput.value);
       var getbtname = localStorage.getItem("blood_type");
       console.log(getbtname);
+
     }
+
+    var i;
+    console.log("local storage");
+    for (i = 0; i < localStorage.length; i++) {
+        console.log(localStorage.key(i) + "=[" + localStorage.getItem(localStorage.key(i)) + "]");
+    }
+///////////////////////birthday
+
+
+
+///////////////////////ethnicity
+
+
+
+///////////////////////blood
+
   </script>
 
 </body>
-
