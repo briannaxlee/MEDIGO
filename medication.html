@@ -1,0 +1,162 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+
+  <meta charset="utf-8">
+  <!-- <link rel="stylesheet" type="text/css" href="css/index.css"> -->
+  <title>MEDIGO</title>
+
+  <!-- css -->
+  <style>
+  div {
+    padding: 10px;
+  }
+  body {
+    align-items: center;
+    text-align: center;
+  }
+  #alAns {
+    display: none;
+  }
+  #results {
+    display: none;
+  }
+  #alQues {
+    display: block;
+  }
+  </style>
+</head>
+
+<body>
+
+  <div id="meds_title">
+    <h1>Medications</h1>
+  </div>
+
+  <div id="alQues">
+    <p>Are you allergic to any medications?</p>
+    <button type="button" onclick="buttonyes();">Yes</button>
+    <button type="button" onclick="buttonno();">No</button>
+  </div>
+
+  <div id="results"></div>
+
+  <!-- insert allergies if yes button clicked -->
+  <div id="alAns">
+    <form method="POST">
+      <!-- <input type="text" name="myInputs[]" placeholder="Username"> -->
+     <div id="dynamic">
+       <label>
+        Entry 1 </label><input type="text" name="AllergyInputs[]">
+     </div>
+     <input type="button" value="Add another" onClick="addInputs('dynamic');">
+    </form>
+
+    <!-- button for finish -->
+    <input type="button" value="Finish" id = "finish1" text = "Finish" onClick="submitAllergy();">
+  </div>
+
+  <div id="MedicationEntries">
+    <p>List any medications you take including oral contraceptives, over the counter medications, and home remedies</p>
+
+    <form method="POST">
+      <!-- <input type="text" name="myInputs[]" placeholder="Username"> -->
+     <div id="dynamicInput">
+       <label>
+        Entry 1 </label><input type="text" name="MedicalInputs[]">
+     </div>
+     <input type="button" value="Add another" onClick="addInput('dynamicInput');">
+    </form>
+
+    <!-- button for finish -->
+    <input type="button" value="Finish" id = "finish2 "onclick="submitMed(); displayStorage();">
+    <!-- displayStorage(); -->
+  </div>
+
+  <div id="displayStorage">Final</div>
+
+
+<!-- JAVASCRIPT-->
+  <script type="text/javascript">
+  function buttonyes() {
+    localStorage.setItem("allergic_yes", "I am allergic to certain medications");
+    document.getElementById("alQues").style.display = "none";
+    document.getElementById("results").style.display = "block";
+    document.getElementById("results").innerHTML = "What medications are you allergic to?";
+    // changeAl = document.createElement("button");
+    // document.createTextNode("Change Allergy Status");
+    // changeAl.onclick = alQues();
+    document.getElementById("alAns").style.display = "block";
+  }
+  function buttonno() {
+    localStorage.setItem("allergic_no", "I am no allergic to any  medications");
+    document.getElementById("alQues").style.display = "none";
+    document.getElementById("results").style.display = "block";
+    document.getElementById("results").innerHTML = "You are not allergic to any medications";
+  }
+  function alQues() {
+    document.getElementById("results").style.display = "none";
+    document.getElementById("results").innerHTML = "";
+    document.getElementById("alAns").style.display = "none";
+    document.getElementById("alQues").style.display = "block";
+  }
+  function addInputs(divName) {
+          var counter = 1;
+          var newdiv = document.createElement('div');
+          newdiv.innerHTML = "<lable>Entry " + (counter + 1) + " </lable>" + "<input type='text' name='AllergyInputs[]'>";
+          document.getElementById(divName).appendChild(newdiv);
+          counter++;
+  }
+  function addInput(divName) {
+          var counter = 1;
+          var newdiv = document.createElement('div');
+          newdiv.innerHTML = "<lable>Entry " + (counter + 1) + " </lable>" + "<input type='text' name='MedicalInputs[]'>";
+          document.getElementById(divName).appendChild(newdiv);
+          counter++;
+  }
+  function submitAllergy() {
+    var userAlInput = document.getElementsByName("AllergyInputs[]");
+    console.log(userAlInput);
+    for (i=0; i<userAlInput.length; i++) {
+      console.log(userAlInput[i].value);
+      localStorage.setItem("allergyInput" + i, userAlInput[i].value);
+      var getAlInput = localStorage.getItem("allergyInput" + i);
+    }
+  }
+  // function submitMed() {
+  //   var userMedInput = document.getElementsByName("myInputs[]");
+  //   // console.log(userMedInput);
+  //   for (i=0; i<userMedInput.length; i++) {
+  //     console.log(userMedInput[i].value);
+  //     localStorage.setItem("medicationInput" + i, userMedInput[i].value);
+  //     var getMedInput = localStorage.getItem("medicationInput" + i);
+  //     console.log(getMedInput);
+  //   }
+  // }
+  function submitMed() {
+    var MedsArray = [];
+    var userMedInput = document.getElementsByName("MedicalInputs[]");
+    console.log(userMedInput);
+    // console.log(userMedInput);
+    for (i=0; i<userMedInput.length; i++) {
+      console.log(userMedInput[i]);
+      MedsArray.push(userMedInput[i].value);
+    }
+    localStorage.setItem('MedicationEntries', JSON.stringify(MedsArray));
+  }
+  // identify div element
+  // print all values in stirng medication entries onto the screen
+  function displayStorage() {
+    document.getElementById("displayStorage")
+  }
+  </script>
+  <a href="medical_history.html"><img src="img/back-button.png" height="42" width="42"></a>
+  <a href="firstaid.html"><img src="img/next-button.png" height="42" width="42"></a>
+
+</body>
+
+</html>
