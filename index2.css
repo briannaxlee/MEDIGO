@@ -1,0 +1,251 @@
+/*color
+grey : #606765
+teal: 7D9C92
+
+
+*/
+
+#index-bod {
+  background: #1c92d2;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to top, #fff, #d5e9ea);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to bottom, #fff, #d5e9ea); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background-size: 414px 736px;
+
+}
+
+#logo {
+  margin-top: 50%;
+  text-align: center;
+  display: fixed;
+  width: 60%;
+}
+
+#imgg {
+  width: 100%;
+  text-align: center;
+}
+
+div {
+  text-align: center;
+  display: inline-block;
+  align-items: center;
+}
+
+div h1{
+  font-size: 20px;
+}
+
+body {
+  margin-top: 1em;
+  text-align: center;
+}
+
+
+.container {
+  width: 87%;
+  height: 100%;
+  border-left: 15px solid white;
+  border-right: 15px solid white;
+  padding-top: 5%;
+  padding-bottom: 5%;
+  margin: 5%;
+  font-weight: 400;
+  background-color: white;
+  opacity: 0.9;
+}
+
+form {
+  font-size: 16px;
+  text-align: left;
+}
+
+#result {
+  font-size: 16px;
+}
+
+#birthday {
+  font-size: 16px;
+  text-align: left;
+}
+#birthday h1 {
+  font-size: 20px;
+  text-align: center;
+  margin-top: 5%;
+}
+
+#birthday select {
+  width: 100%;
+  height: 2em;
+  border: 2px solid #606765;
+}
+
+#year {
+  width: 100%;
+  height: 40px;
+  border: 2px solid #606765;
+  font-size: 20px;
+}
+
+#birthday_results {
+  text-align: center;
+}
+
+#ethnicdiv h1 {
+  font-size: 20px;
+  text-align: center;
+  margin-top: 5%;
+}
+
+#ethnicdiv p {
+  font-size: 18px;
+}
+
+#ethnicdiv form input {
+  float: left;
+  width: 100%;
+  text-align: left;
+}
+
+#ethnicdiv form p {
+  display: block;
+  float:right;
+  width: 100%;
+  text-align: right;
+}
+
+#blooddiv h1 {
+  font-size: 20px;
+  text-align: center;
+  margin-top: 5%;
+}
+
+#blooddiv select {
+  width: 30%;
+  height: 40px;
+  border: 2px solid #606765;
+  font-size: 18px;
+  text-align: center;
+}
+
+#name input {
+ font-size: 18px;
+ text-align: left;
+ width: 100%;
+ height: 2em;
+ border: none;
+ border-bottom: 2px solid #606765;
+}
+
+/*medicalhis*/
+#med_his {
+  text-align: center;
+}
+
+#med_his_title h1 {
+  font-size: 20px;
+  text-align: center;
+  margin-top: 2.5%;
+}
+
+#med_his_title p {
+  font-size: 18px;
+}
+
+#con_sys section {
+  font-size: 18px;
+  text-align: left;
+}
+
+#con_sys section input[type="checkbox"]{
+  size: 4px 4px 4px 4px;
+}
+#yes {
+  text-align: left;
+}
+
+#con_sys section input {
+  height: 40px;
+  font-size: 18px;
+  width: 100%;
+  border: none;
+  border-bottom: 2px solid #606765;
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+}
+
+
+#med_condition p {
+  text-align: center;
+  margin-top: 10px;
+}
+
+#con_sys h2 {
+  font-size: 20px;
+}
+
+#meds_title h1 {
+  font-size: 20px;
+  text-align: center;
+  margin-top: 2.5%;
+}
+
+#alAns {
+  display: none;
+}
+#results {
+  display: none;
+}
+#alQues {
+  display: block;
+}
+
+#medbod {
+  background-color:
+}
+
+#medbod input {
+  font-size: 18px;
+  text-align: center;
+  width: 100%;
+  height: 2em;
+  border: none;
+  border-bottom: 2px solid #606765;
+  display: inline-block;
+}
+
+input[type="text"] {
+  width: 100%;
+}
+
+.button {
+    background-color: white;
+    padding:20px 30px 20px 30px;
+    text-align: center;
+    display: inline-block;
+    font-size: 20px;
+    margin: 0px;
+    cursor: pointer;
+    border: 5px solid black;
+    width: 100%;
+}
+
+#cpr {
+  font-weight: bold;
+  margin-top: 10%;
+  color: black;
+  text-align: center;
+  font-size: 20px;
+  font-family: sans-serif;
+}
+
+#cprp {
+  width: 87%;
+  height: 100%;
+  padding: 2%;
+  margin: 5%;
+  font-size: 18px;
+  text-align: left;
+  font-weight: 400;
+  background-color: white;
+  opacity: 0.9;
+}
