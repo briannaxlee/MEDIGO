@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+  <link rel="stylesheet" type="text/css" href="css/index2.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <!-- <link rel="stylesheet" type="text/css" href="css/index.css"> -->
+  <title>MEDIGO</title>
+
+  <!-- css -->
+  <style>
+  div {
+    padding: 10px;
+  }
+  </style>
+</head>
+
+<body id="medbod">
+
+  <div id="meds_title" class="container">
+    <h1>Medications</h1>
+  </div>
+
+  <div id="alQues" class="container">
+    <p>Are you allergic to any medications?</p>
+    <button class="button" type="button" onclick="buttonyes();">yes</button>
+    <br>
+    <br>
+    <button class="button" type="button" onclick="buttonno();">no</button>
+  </div>
+
+  <!-- insert allergies if yes button clicked -->
+  <div id="alAns" class="container">
+    <div id="results" class="container"></div>
+    <form method="POST">
+      <!-- <input type="text" name="myInputs[]" placeholder="Username"> -->
+     <div id="dynamic" class="container">
+       <label>
+        Entry 1</label><input type="text" name="AllergyInputs[]">
+        <br>
+        <br>
+    </div>
+     <button type="button" class="button"  onClick="addInputs('dynamic');"><p>Add Another Entry</p></button>
+    </form>
+
+    <!-- button for finish -->
+    <button class="button" type="button" onClick="submitAllergy();"><p>Submit</p></button>
+  </div>
+
+  <div id="MedicationEntries" class="container">
+    <p>List any medications you take including oral contraceptives, over the counter medications, and home remedies</p>
+
+    <form method="POST">
+      <!-- <input type="text" name="myInputs[]" placeholder="Username"> -->
+     <div id="dynamicInput" class="container">
+       <label>
+        Entry 1 </label><input type="text" name="MedicalInputs[]">
+        <br>
+        <br>
+     </div>
+     <button type="button" class="button"  onClick="addInput('dynamicInput');"><p>Add Another Entry</p></button>
+    </form>
+    <div id="displayEntries" class="container"></div>
+
+  </div>
+
+    <div class="container">
+    <!-- button for finish -->
+    <button class="button" type="button"  onclick="submitMed();"><p>Submit</p></button>
+    <br>
+    <br>
+    <a href="medical_history.html"><img src="img/backbutton.jpg" height="100" width="100"></a>
+    <a href="cpr.html"><img src="img/nextbutton.jpg" height="100" width="100"></a>
+    <!-- displayStorage(); -->
+  </div>
+
+
+
+
+
+<!-- JAVASCRIPT-->
+  <script type="text/javascript">
+  window.init
+
+  function buttonyes() {
+    localStorage.setItem("allergic_yes", "I am allergic to certain medications");
+    document.getElementById("alQues").style.display = "none";
+    document.getElementById("results").style.display = "block";
+    document.getElementById("results").innerHTML = "What medications are you allergic to?";
+    // changeAl = document.createElement("button");
+    // document.createTextNode("Change Allergy Status");
+    // changeAl.onclick = alQues();
+    document.getElementById("alAns").style.display = "block";
+  }
+  function buttonno() {
+    localStorage.setItem("allergic_no", "I am no allergic to any  medications");
+    document.getElementById("alQues").style.display = "none";
+    document.getElementById("results").style.display = "block";
+    document.getElementById("results").innerHTML = "You are not allergic to any medications";
+  }
+  function alQues() {
+    document.getElementById("results").style.display = "none";
+    document.getElementById("results").innerHTML = "";
+    document.getElementById("alAns").style.display = "none";
+    document.getElementById("alQues").style.display = "block";
+  }
+  function addInputs(divName) {
+          var counter = 1;
+          var newdiv = document.createElement('div');
+          newdiv.innerHTML = "<lable>Entry " + (counter + 1) + " </lable>" + "<input type='text' name='AllergyInputs[]'>" + "<br><br>";
+          document.getElementById(divName).appendChild(newdiv);
+          counter++;
+  }
+  function addInput(divName) {
+          var counter = 1;
+          var newdiv = document.createElement('div');
+          newdiv.innerHTML = "<lable>Entry " + (counter + 1) + " </lable>" + "<input type='text' name='MedicalInputs[]'>" + "<br><br>";
+          document.getElementById(divName).appendChild(newdiv);
+          counter++;
+  }
+
+  function submitAllergy() {
+    var userAlInput = document.getElementsByName("AllergyInputs[]");
+    console.log(userAlInput);
+    for (i=0; i<userAlInput.length; i++) {
+      console.log(userAlInput[i].value);
+      localStorage.setItem("allergyInput" + i, userAlInput[i].value);
+      var getAlInput = localStorage.getItem("allergyInput" + i);
+    }
+  }
+
+  // function submitMed() {
+  //   var userMedInput = document.getElementsByName("myInputs[]");
+  //   // console.log(userMedInput);
+  //   for (i=0; i<userMedInput.length; i++) {
+  //     console.log(userMedInput[i].value);
+  //     localStorage.setItem("medicationInput" + i, userMedInput[i].value);
+  //     var getMedInput = localStorage.getItem("medicationInput" + i);
+  //     console.log(getMedInput);
+  //   }
+  // }
+  function submitMed() {
+    var MedsArray = [];
+    var userMedInput = document.getElementsByName("MedicalInputs[]");
+    console.log(userMedInput);
+    // console.log(userMedInput);
+    for (i=0; i<userMedInput.length; i++) {
+      console.log(userMedInput[i]);
+      MedsArray.push(userMedInput[i].value);
+    }
+    localStorage.setItem('MedicationEntries', JSON.stringify(MedsArray));
+    var MyMedsShow = JSON.parse(localStorage.getItem('MedicationEntries'));
+    window.
+    console.log(MyMedsShow);
+    document.getElementById("displayEntries").innerHTML = MyMedsShow;
+  }
+
+  window.onload = init;
+  function init () {
+    document.getElementById("displayEntries").innerHTML = JSON.parse(localStorage.getItem('MedicationEntries'));
+
+
+  }
+
+  </script>
+
+
+</body>
+
+</html>
